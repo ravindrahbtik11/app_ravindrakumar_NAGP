@@ -14,8 +14,8 @@ pipeline{
 		stage('Start and Checkout') {
 			steps {
 				echo '**Starting code check out**'
-				git branch: 'main', url: 'https://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@github.com/ravindrahbtik11/eCommerce-Web.git'
-				echo '****Code check out Finished****'
+				git branch: 'main', url: 'https://github.com/ravindrahbtik11/app_ravindrakumar_NAGP.git'
+				echo '****Code check out Finished*****'
 			}
 		}
 		stage('NPM Istall'){
@@ -49,7 +49,7 @@ pipeline{
 							  echo '****Image built****'
 							  echo '**Start pushing Docker image**'
 							  docker.withRegistry( '', 'DockerDetail' ) {
-									 dockerImage.push('latest')
+									 dockerImage.push(${BUILD_NUMBER})
 								}
 							  echo '****Image pushed****'					 
 						}	
