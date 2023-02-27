@@ -1,0 +1,22 @@
+<block-ui [template]="blockTemplate">
+    <eca-toast-message></eca-toast-message>
+    <div class="body-container">
+        <div *ngIf="isLoggedIn">
+            <div class="header">
+                <eca-toolbar></eca-toolbar>
+                <div>
+                    <eca-navbar class="topHeader"></eca-navbar>
+                </div>
+            </div>
+
+            <eca-content></eca-content>
+
+            <div id="footer" *ngIf="isLoggedIn">
+                <eca-footer></eca-footer>
+            </div>
+        </div>
+        <div  *ngIf="!isLoggedIn">
+            <eca-login></eca-login>
+        </div>
+    </div>
+</block-ui>

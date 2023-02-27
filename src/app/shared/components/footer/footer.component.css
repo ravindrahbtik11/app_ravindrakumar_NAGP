@@ -1,0 +1,40 @@
+
+.ec-footer-menu{
+    padding-top: 13px;
+    text-align: right;
+    padding-bottom: 13px;
+    padding-right: 0px;
+}
+.ec-label{
+color: #333333;
+padding-right: 20px;
+font-size: 10px;
+}
+
+.ec-label:last-child{
+  padding-right: 0px;
+  }
+  
+  a{color: #333333;}
+
+.container-footer {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.not-active {
+  pointer-events: none;
+  cursor: default;
+}
+
+label.version{
+  font-weight: normal;
+  font-size: 10px;
+  background: #d1d1d1;
+  padding: 6px;
+  border-radius: 4px;
+  font-weight: bold;
+   text-shadow: 1px 1px #ffffff;
+}

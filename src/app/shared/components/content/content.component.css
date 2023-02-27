@@ -1,0 +1,40 @@
+:host {
+    display: flex;
+    display: -webkit-flex;
+    background-color: #fff; 
+    flex-grow: 1;
+    padding: 0 0px;
+    height: calc(100% + 81rem * 1/2);
+    flex:1;
+    -ms-overflow-style:auto;
+    overflow: auto;
+}
+
+.body-style {
+    padding: 5px 0px;
+     flex-grow: 1; 
+    overflow: hidden;
+    overflow-y:auto; 
+    width: 100%;
+}
+
+
+.rWraper{
+    height: 100%;
+}
+
+@media (max-width: 767px) {
+    :host {
+        padding: 0 0px;
+  
+}
+
+.body-style {
+    padding: 7px;
+
+} 
+
+
+}
+
+

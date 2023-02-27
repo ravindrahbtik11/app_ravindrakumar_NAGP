@@ -1,0 +1,80 @@
+<div>
+    <h3 class="sm-head">User Registration</h3>
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4 registration">
+            <form name="form" (ngSubmit)="registrationForm.form.valid" #registrationForm="ngForm" novalidate
+                class="sm-form-group  m-l-20">
+                <div class="row">
+                    <div class="col-md-12 form-group helpblock">
+                        <mat-form-field>
+                            <input matInput id="txtEmailAddress" placeholder="Your Email Address"
+                                autocomplete="new-email" name="emailAddress" [(ngModel)]="model.emailAddress"
+                                #emailAddress="ngModel" required />
+                        </mat-form-field>
+                        <div *ngIf="registrationForm.submitted && !emailAddress.valid" class="error">Email Address
+                            is required.</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group helpblock">
+                        <mat-form-field>
+                            <input matInput id="txtPassword" placeholder="Choose Password" name="password"
+                                type="password" [(ngModel)]="model.password" #password="ngModel" required
+                                autocomplete="new-password" />
+                        </mat-form-field>
+                        <div *ngIf="registrationForm.submitted && !password.valid" class="error">Password is
+                            required.</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group helpblock">
+                        <mat-form-field>
+                            <input matInput id="txtConfirmPassword" placeholder="Choose Confirm Password"
+                                name="confirmPassword" type="password" [(ngModel)]="model.confirmPassword"
+                                #confirmPassword="ngModel" required autocomplete="new-password" />
+                        </mat-form-field>
+                        <div *ngIf="registrationForm.submitted && !confirmPassword.valid" class="error">Confirm
+                            Password is required.</div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-2"> I'm a</div>
+                        <mat-radio-group [(ngModel)]="model.gender" name="gender">
+                            <div class="col-md-5 col-lg-3 p-r-0">
+                                <div class="form-group">
+                                    <mat-radio-button value="'male'">
+                                        <b> Male </b>
+                                    </mat-radio-button>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-lg-4 p-l-0">
+                                <div class="form-group">
+                                    <mat-radio-button value="'female'">
+                                        <b>Female</b>
+                                    </mat-radio-button>
+                                </div>
+                            </div>
+                        </mat-radio-group>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-actions right">
+                            <button type="submit" class="btn btn-success">
+                                Register</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+</div>

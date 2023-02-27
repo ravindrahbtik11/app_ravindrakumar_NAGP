@@ -1,0 +1,142 @@
+:host {
+    background-color: #fff;
+    color: rgba(255, 255, 255, 0.87);
+    display: block;
+    height: 70px;
+    padding: 10px 20px;
+    position: relative;
+  }
+  
+  h1 {
+    display: inline;
+    font-size: 20px;
+    font-weight: normal;
+    letter-spacing: 0.1px;
+    line-height: 48px;
+  }
+  
+  .logo-inner{
+  width: 70px;
+  float: left;
+  position: relative;
+    
+  }
+  label{color: #000; font-size: 13px; }
+  
+  .logo-inner label.version{
+    position: absolute;
+    color: #000 !important;
+    font-size: 11px;
+    font-weight: normal;
+    right: -45px;
+    font-style: italic;
+    top: 28px;
+  }
+  
+  img {
+      vertical-align: middle;
+      display: block;
+      max-width: 100%;
+      height: auto;
+  }
+  
+  :host lang-switcher,
+  :host .sm-logout,
+  :host .more {
+  }
+  
+  .user-details a{ font-size: 14px; color: #000; font-family: "SiemensSans-Roman"}
+  .user-details li{ display: inline-block; float: left; padding: 0 10px;}
+  .user-details img{     display: inline-block;
+    padding-right: 5px;
+  
+    margin-top: -4px;}
+  .user-details label{font-weight: normal; font-size: 14px;}
+  
+  .user-details li:first-child{ padding-left: 0}
+  .user-details li:last-child{ padding-right: 7px; padding-left: 0}
+  
+  
+  ul li{ padding: 0; margin: 0; list-style: none;}
+  :host lang-switcher {
+    top: 13px;
+    right: 130px;
+    width: auto;
+  }
+  a{ font-family: "SiemensSlab-Bold"}
+  
+  
+  .more:hover {
+    opacity: 1;
+  }
+  
+  .sm-logout{
+      top: 13px;
+      right: 45px;
+      width: auto;
+      cursor: pointer;
+  }
+  #nav-icon3{
+  
+    display: none;
+  }
+  
+  .userDtatils{
+  
+    position: absolute;
+    top: 95%;
+    left: 0;
+    float: left;
+    min-width: 160px;
+    padding: 5px 10px;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+  }
+  
+  
+  
+  .pull-right > .userDtatils {
+    right: 0;
+    left: auto;
+  }
+  
+  
+  
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    
+    label { padding-top:7px }
+  
+    .contactUser{ line-height: 1}
+  }
+  @media screen and (max-width: 767px) {
+    #nav-icon3{
+      
+        display: block;
+      }
+      .userDtatils{
+  
+        position: relative;
+        box-shadow:none;
+        border:0;
+      }
+      .user-details .mat-select-value-text,.userDtatils span {
+       display: none;
+    }
+    
+  }
+  
+  
+  @media screen and (min-width: 768px) {
+    .userDtatils{
+      display: block;
+      position: relative;
+      box-shadow: none;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      top:0;
+    }
+  }
+  

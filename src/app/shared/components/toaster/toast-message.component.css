@@ -1,0 +1,15 @@
+.toast-top-right {
+    left: 40%;
+    top: 10%;
+  }
+  .asf{
+      color:res;
+  }
+  
+  #toasters {
+    position : fixed;
+    top : 0;
+    right : 0;
+    left : 0;
+    z-index : 199999;
+    }

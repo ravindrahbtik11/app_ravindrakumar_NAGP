@@ -1,0 +1,46 @@
+<div class="more" *ngIf="smallScreen">
+    <a href="javascript:void(0)" (click)="showMenu()">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </a>
+  </div>
+  
+  <div class="navWrapper" [@toggleState]="morlink ? 'true' : 'false'" *ngIf="menus && menus.length > 0">
+    <ul class="main-navigation" class="level-1">
+      <li *ngFor="let item of (menus | filterChild : 0 : true)">
+        <a href="javascript:" class="cssLabel homeScreen" [routerLink]="[item.route]"
+          (click)="closeMenu($event,'home')">
+          <span>{{item.text}}</span>
+        </a>
+        <!-- <a href="javascript:" *ngIf="item.id !== 1" (mouseenter)="openMenu($event,'')"
+          routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+        true}" class="cssLabel">
+          {{item.text}}
+        </a> -->
+        <ul class="level-2" *ngIf="(menus | filterChild : item.id : true).length > 0">
+          <li *ngFor="let level2Item of (menus | filterChild : item.id : true)">
+            <a href="javascript:" *ngIf="level2Item.route === null || level2Item.route?.length === 0"
+              (mouseenter)="openMenu($event,'level-2')" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+            true}">
+              {{level2Item.text}}
+              <i *ngIf="(menus | filterChild : level2Item.id : true).length > 0" class="iconnextLevelMenu"></i>
+            </a>
+            <a href="javascript:" [routerLink]="[level2Item.route]" *ngIf="level2Item.route?.length > 0"
+              (click)="closeMenu($event,'level-2')" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+            true}">
+              {{level2Item.text}}
+            </a>
+            <ul class="level-3" *ngIf="(menus | filterChild : level2Item.id : true).length > 0">
+              <li *ngFor="let level3Item of (menus | filterChild : level2Item.id : true)">
+                <a href="javascript:" [routerLink]="[level3Item.route]" (click)="closeMenu($event,'level-3')"
+                  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+                true}">
+                  {{level3Item.text}}
+  
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
