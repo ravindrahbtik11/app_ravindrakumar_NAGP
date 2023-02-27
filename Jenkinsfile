@@ -49,7 +49,7 @@ pipeline{
 							  echo '****Image built****'
 							  echo '**Start pushing Docker image**'
 							  docker.withRegistry( '', 'DockerDetail' ) {
-									 dockerImage.push(${BUILD_NUMBER})
+									 dockerImage.push()
 								}
 							  echo '****Image pushed****'					 
 						}	
