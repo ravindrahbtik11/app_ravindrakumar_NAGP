@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)1-UserService\eCommerce.UserService\OutputBin\$(TargetFileName)&quot;" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\4-Shared\eCommerce.UserService.Shared\eCommerce.UserService.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="eCommerce.UserService.DAC">
+      <HintPath>..\..\1-UserService\eCommerce.UserService\OutputBin\eCommerce.UserService.DAC.dll</HintPath>
+    </Reference>
+    <Reference Include="eCommerce.UserService.Shared">
+      <HintPath>..\..\1-UserService\eCommerce.UserService\OutputBin\eCommerce.UserService.Shared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

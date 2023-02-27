@@ -1,0 +1,12 @@
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\4-Shared\eCommerce.UserService.Shared\bin\Debug\net6.0\eCommerce.UserService.Shared.deps.json
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\4-Shared\eCommerce.UserService.Shared\bin\Debug\net6.0\eCommerce.UserService.Shared.dll
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\4-Shared\eCommerce.UserService.Shared\bin\Debug\net6.0\eCommerce.UserService.Shared.pdb
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\4-Shared\eCommerce.UserService.Shared\obj\Debug\net6.0\eCommerce.UserService.Shared.csproj.AssemblyReference.cache
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\4-Shared\eCommerce.UserService.Shared\obj\Debug\net6.0\eCommerce.UserService.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\4-Shared\eCommerce.UserService.Shared\obj\Debug\net6.0\eCommerce.UserService.Shared.AssemblyInfoInputs.cache
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\4-Shared\eCommerce.UserService.Shared\obj\Debug\net6.0\eCommerce.UserService.Shared.AssemblyInfo.cs
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\4-Shared\eCommerce.UserService.Shared\obj\Debug\net6.0\eCommerce.UserService.Shared.csproj.CoreCompileInputs.cache
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\4-Shared\eCommerce.UserService.Shared\obj\Debug\net6.0\eCommerce.UserService.Shared.dll
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\4-Shared\eCommerce.UserService.Shared\obj\Debug\net6.0\refint\eCommerce.UserService.Shared.dll
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\4-Shared\eCommerce.UserService.Shared\obj\Debug\net6.0\eCommerce.UserService.Shared.pdb
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\4-Shared\eCommerce.UserService.Shared\obj\Debug\net6.0\ref\eCommerce.UserService.Shared.dll

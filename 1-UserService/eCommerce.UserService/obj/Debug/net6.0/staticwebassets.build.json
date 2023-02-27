@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "wJEyHHJDRQ4n8BXyc0njtWL1i6f2QvB1w4E7WJONjos=",
+  "Source": "eCommerce.UserService",
+  "BasePath": "_content/eCommerce.UserService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

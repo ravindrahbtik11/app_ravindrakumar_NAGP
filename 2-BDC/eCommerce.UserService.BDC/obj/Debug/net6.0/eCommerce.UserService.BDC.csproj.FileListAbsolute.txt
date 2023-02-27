@@ -1,0 +1,17 @@
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\2-BDC\eCommerce.UserService.BDC\bin\Debug\net6.0\eCommerce.UserService.BDC.deps.json
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\2-BDC\eCommerce.UserService.BDC\bin\Debug\net6.0\eCommerce.UserService.BDC.dll
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\2-BDC\eCommerce.UserService.BDC\bin\Debug\net6.0\eCommerce.UserService.BDC.pdb
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\2-BDC\eCommerce.UserService.BDC\obj\Debug\net6.0\eCommerce.UserService.BDC.csproj.AssemblyReference.cache
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\2-BDC\eCommerce.UserService.BDC\obj\Debug\net6.0\eCommerce.UserService.BDC.GeneratedMSBuildEditorConfig.editorconfig
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\2-BDC\eCommerce.UserService.BDC\obj\Debug\net6.0\eCommerce.UserService.BDC.AssemblyInfoInputs.cache
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\2-BDC\eCommerce.UserService.BDC\obj\Debug\net6.0\eCommerce.UserService.BDC.AssemblyInfo.cs
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\2-BDC\eCommerce.UserService.BDC\obj\Debug\net6.0\eCommerce.UserService.BDC.csproj.CoreCompileInputs.cache
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\2-BDC\eCommerce.UserService.BDC\obj\Debug\net6.0\eCommerce.UserService.BDC.dll
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\2-BDC\eCommerce.UserService.BDC\obj\Debug\net6.0\refint\eCommerce.UserService.BDC.dll
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\2-BDC\eCommerce.UserService.BDC\obj\Debug\net6.0\eCommerce.UserService.BDC.pdb
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\2-BDC\eCommerce.UserService.BDC\obj\Debug\net6.0\ref\eCommerce.UserService.BDC.dll
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\2-BDC\eCommerce.UserService.BDC\bin\Debug\net6.0\eCommerce.UserService.DAC.dll
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\2-BDC\eCommerce.UserService.BDC\bin\Debug\net6.0\eCommerce.UserService.Shared.dll
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\2-BDC\eCommerce.UserService.BDC\obj\Debug\net6.0\eCommerce.UserService.BDC.csproj.CopyComplete
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\2-BDC\eCommerce.UserService.BDC\bin\Debug\net6.0\eCommerce.UserService.BDC.runtimeconfig.json
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.UserService\2-BDC\eCommerce.UserService.BDC\obj\Debug\net6.0\eCommerce.UserService.BDC.genruntimeconfig.cache
