@@ -1,0 +1,65 @@
+
+<div class="">
+
+
+    <div class="sm-container-medium clearfix">
+        <div class="p-l-0 p-r-0">
+            <div class="col-md-10 p-l-0 p-r-0">
+                <input id="uploadFile" placeholder="Choose File" disabled="disabled" #uploadFile />
+            </div>
+            <div class="col-md-2  p-l-0 p-r-0">
+                <div class="fileUpload btn btn-success">
+                    <span title="'Browse' ">Browse </span>
+                    <input id="uploadBtn" type="file" title="'Browse' " class="upload"
+                        accept="{{acceptType}}" name="fileUploader" ng2FileSelect [uploader]="uploader"
+                        #fileUploaderInput />
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-md-6">
+            <div *ngIf="isDragable" ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+                (fileOver)="fileOverBase($event)" [uploader]="uploader" class="well my-drop-zone"
+                (onFileDrop)="dropped($event)">
+                Drag Drop FileHere
+            </div>
+        </div> -->
+
+
+    </div>
+
+   
+
+    <div class="progressBar" *ngFor="let item of uploader.queue">
+        <label class="filetype">{{selectedFileName}}</label>
+        <h4 *ngIf="item.progress > 0">File Uploading</h4>
+        <table class="table table-border">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"
+                                #progressbar></div>
+                        </div>
+                        <span *ngIf="item.progress < 100">{{item.progress + '%'}} Complete</span>
+                        <span *ngIf="item.progress === 100">Processing Data</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="pull-right button-row">
+                            <a href="javascript:" class="btn btn-warning" (click)="uploadData(item)" id="btnUpload">
+                                <span>Upload</span>
+                            </a>
+
+                            <a href="javascript:" class="btn btn-success" (click)="removeItem(item);" id="btnRemove">
+                                <span>Reset</span>
+                            </a>
+
+                        </div>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

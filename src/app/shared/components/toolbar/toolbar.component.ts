@@ -1,5 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { AppSettings } from 'src/app/app.settings';
+import { AuthService } from 'src/app/auth.service';
 
 /**
  * This class represents the Toolbar component.
@@ -19,16 +20,18 @@ export class ToolbarComponent implements OnDestroy {
   subscription: any;
   getInnerWidt: number;
   version: string;
-  isLoggedIn:boolean;
-  constructor() {
+  isLoggedIn: boolean;
+  noOfCartItems: number;
+  constructor(private authService: AuthService) {
     this.version = '';
     this.isLoggedIn = true;
     if (AppSettings !== null) {
       this.version = AppSettings.Version;
     }
-    // this.subscription = this.authService.loginEmitter.subscribe((val: boolean) => {
-    //   this.isLoggedIn = val;
-    // });
+    this.noOfCartItems = 0;
+    this.subscription = this.authService.cartItems.subscribe((items: any) => {
+      this.noOfCartItems = this.authService.selectedItems ? this.authService.selectedItems.length : 0;
+    });
 
     // if (this.authService.userInfo && this.authService.userInfo.isUserLoggedIn) {
     //   this.isLoggedIn = this.authService.userInfo.isUserLoggedIn;

@@ -4,16 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { SHARED_COMPONENTS } from './components';
 import { SHARED_PIPES } from './pipes';
 import { SHARED_DIRECTIVES } from './directives';
 import { SHARED_PROVIDERS } from './services';
 
- import { MatInputModule } from '@angular/material/input';
- import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
- import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 /**
@@ -29,7 +31,9 @@ const SHARED_MODULES: any[] = [
   MatInputModule,
   MatSelectModule,
   MatCheckboxModule,
-  MatRadioModule
+  MatRadioModule,
+  MatDatepickerModule,
+  FileUploadModule
 ];
 
 @NgModule({

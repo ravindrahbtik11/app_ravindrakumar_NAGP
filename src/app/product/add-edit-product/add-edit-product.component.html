@@ -1,0 +1,161 @@
+<div>
+    <h3 class="clearfix">
+        <div class="pageHeader pull-left">Add Product</div>
+        <a class="pull-right m-r-20" href="JavaScript:" (click)="back()">Back</a>
+        
+    </h3>
+    <form name="form" (ngSubmit)="productForm.form.valid && saveProductDetail(productForm.form)" #productForm="ngForm" novalidate
+        class="sm-form-group">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-3 form-group">
+                <div [ngClass]="{ 'has-error': productForm.submitted && !productName.valid }">
+                    <mat-form-field>
+                        <input matInput id="txtName" placeholder="Product Name" name="productName"
+                            [(ngModel)]="model.name" #productName="ngModel" required />
+                    </mat-form-field>
+                    <div *ngIf="productForm.submitted && !productName.valid" class="help-block">Product name is
+                        required.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 form-group">
+                <div [ngClass]="{ 'has-error': productForm.submitted && !MRP.valid }">
+                    <mat-form-field>
+                        <input matInput id="txtpMRP" placeholder="Product MRP" name="MRP" [(ngModel)]="model.MRP"
+                            #MRP="ngModel" required />
+                    </mat-form-field>
+                    <div *ngIf="productForm.submitted && !MRP.valid" class="help-block">Product MRP is required.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 form-group">
+                <div [ngClass]="{ 'has-error': productForm.submitted && !buyingPrice.valid }">
+                    <mat-form-field>
+                        <input matInput id="txtpBuyingPrice" placeholder="Product Buying Price" name="buyingPrice"
+                            [(ngModel)]="model.buyingPrice" #buyingPrice="ngModel" required />
+                    </mat-form-field>
+                    <div *ngIf="productForm.submitted && !buyingPrice.valid" class="help-block">Product buying price is
+                        required.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-3 form-group">
+                <div [ngClass]="{ 'has-error': productForm.submitted && !expiry.valid }">
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="expiryDate" readonly="readonly" placeholder="Expiry Date"
+                            [(ngModel)]="model.expiry" required name="expiry" #expiry="ngModel">
+                        <mat-datepicker-toggle matSuffix [for]="expiryDate"></mat-datepicker-toggle>
+                        <mat-datepicker #expiryDate></mat-datepicker>
+                    </mat-form-field>
+                    <div *ngIf="productForm.submitted && !expiry.valid" class="help-block">Expiry Date is
+                        required.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 form-group">
+                <div >
+                    <mat-form-field>
+                        <input matInput id="txtpMinimumSellingPrice" placeholder="Product Minimum Selling Price Price"
+                            name="MinimumSellingPrice" [(ngModel)]="model.MinimumSellPrice"
+                            #MinimumSellingPrice="ngModel" />
+                    </mat-form-field>
+                    <!-- <div *ngIf="productForm.submitted && !price.valid" class="help-block">Product price is required. -->
+                </div>
+            </div>
+            <div class="col-md-4 form-group">
+                <div >
+                    <mat-form-field>
+                        <input matInput id="txtpMinimumSellingPrice" placeholder="Product Selling Price Price"
+                            name="sellingPrice" [(ngModel)]="model.sellingPrice"
+                            #sellingPrice="ngModel" />
+                    </mat-form-field>
+                    <!-- <div *ngIf="productForm.submitted && !sellingPrice.valid" class="help-block">Product selling price is required. -->
+                </div>
+                
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row m-t-20 m-b-20">
+            <div class="col-md-1"></div>
+            
+            <div class="col-md-3 form-group">
+                <div >
+                    <mat-form-field>
+                        <mat-select id="ddlCategory" placeholder="Select Category"  ngDefaultControl [(ngModel)]="model.CategoryId" name="category">
+                            <mat-option *ngFor="let c of categoryies" [value]="c.value">{{c.name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                
+            </div>
+            <div class="col-md-3 form-group">
+                <div [ngClass]="{ 'has-error': productForm.submitted && !brand.valid }">
+                    <mat-form-field>
+                        <mat-select id="ddlBrand" ngDefaultControl  placeholder="Select Brand"  [(ngModel)]="model.brand" name="brand"
+                            #brand="ngModel" required>
+                            <mat-option *ngFor="let br of brands" [value]="br.value">{{br.name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <div *ngIf="productForm.submitted && !brand.valid" class="help-block">Product brand is required.
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-4 form-group">
+                <div>
+                    <!-- <div class="sm-container-medium clearfix">
+                        <div class="fileUpload">
+                            <input id="uploadBtn" type="file" title="Browse" class="upload" accept="{{acceptType}}"
+                            name="fileUploader" #fileUpload />
+                            <input type="file" class="file-input"  (change)="onFileSelected($event)" #fileUpload>
+                            <input id="uploadBtn" type="file" title="Browse" class="upload" accept="{{acceptType}}"
+                                name="fileUploader" (change)="onFileSelected($event)" #fileUpload />
+                                <div class="file-upload">
+                                    {{fileName || "No file uploaded yet."}}
+                                 </div>
+                                 <eca-file-uploader [isDragable]="true" [uploadType]="uploadType" [uploadUrl]="uploadUrl" [allowFileType]="allowFileType"
+                                (uploadCompleteHandler)="uploadComplete($event)"></eca-file-uploader>
+                        </div>
+                    </div> -->
+                    <div [ngClass]="{ 'has-error': productForm.submitted && !quantity.valid }">
+                        <mat-form-field>
+                            <input matInput id="txtQuantity" placeholder="Product quantity" name="quantity"
+                                [(ngModel)]="model.quantity" #quantity="ngModel" required type="number" min="0" />
+                        </mat-form-field>
+                        <div *ngIf="productForm.submitted && !quantity.valid" class="help-block">Product quantity is
+                            required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row m-t-20 m-b-20">
+            <div class="col-md-1"></div>
+            <div class="col-md-7 form-group">
+                <div>
+                    <!-- <mat-form-field>
+                        <input matInput id="txtDescription" placeholder="Product description" name="description"
+                            [(ngModel)]="model.description" #description="ngModel" required />
+                    </mat-form-field> -->
+                    <mat-form-field>
+                        <textarea #description class="txtDescription" rows="4"
+                            autocomplete="off" name="description" placeholder="Product description"  maxlength="4000" matInput [(ngModel)]="model.description"
+                            #value="ngModel"></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <button type="submit">Save</button>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </form>
+
+</div>

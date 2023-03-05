@@ -10,7 +10,7 @@ export class ECAHttpService implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         request = request.clone({
-            withCredentials: true
+            withCredentials: false
         });
 
         return next.handle(request);
@@ -59,12 +59,16 @@ export class ECAHttpService implements HttpInterceptor {
                 options.headers = optionsArgs.headers;
             }
         }
+        if (!options.headers.get('Content-Type')) {
+            options.headers = options.headers.append('Content-Type', 'application/json; charset=utf-8');
+        }
 
-        options.headers = options.headers.append('Pragma', 'no-cache');
-            options.headers = options.headers.append('Cache-Control', 'no-cache');
-            options.headers = options.headers.append('Cache-Control', 'no-store, no-cache, must-revalidate');
-            options.headers = options.headers.append('Content-Encoding', 'UTF-8');
-            options.headers = options.headers.append('Content-Security-Policy', `default-src 'self'`);
+
+        // options.headers = options.headers.append('Pragma', 'no-cache');
+        //     options.headers = options.headers.append('Cache-Control', 'no-cache');
+        //     options.headers = options.headers.append('Cache-Control', 'no-store, no-cache, must-revalidate');
+        //     options.headers = options.headers.append('Content-Encoding', 'UTF-8');
+        //     options.headers = options.headers.append('Content-Security-Policy', `default-src 'self'`);
         return options;
     }
 
