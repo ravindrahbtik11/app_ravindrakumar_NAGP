@@ -14,7 +14,7 @@ pipeline{
 		stage('Start') {
 			steps {
 				echo '**Starting code check out**'
-				git branch: 'master', url: 'https://github.com/ravindrahbtik11/app_ravindrakumar.git'
+				git branch: 'ProductService', url: 'https://github.com/ravindrahbtik11/app_ravindrakumar_NAGP.git'
 				echo '****Code check out Finished****'
 			}
 		}
