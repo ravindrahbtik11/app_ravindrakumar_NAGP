@@ -4,14 +4,14 @@
     "D:\\Miscellaneous\\Ravindra\\StudyMaterial\\NAGP\\Final\\eCommerce\\eCommerce.Product\\eCommerce.ProductTest\\eCommerce.ProductTest.csproj": {}
   },
   "projects": {
-    "D:\\Miscellaneous\\Ravindra\\StudyMaterial\\NAGP\\Final\\eCommerce\\eCommerce.Product\\eCommerce.ProductTest\\eCommerce.ProductTest.csproj": {
+    "D:\\Miscellaneous\\Ravindra\\StudyMaterial\\NAGP\\Final\\eCommerce\\eCommerce.Product\\eCommerce.ProductService\\eCommerce.ProductService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Miscellaneous\\Ravindra\\StudyMaterial\\NAGP\\Final\\eCommerce\\eCommerce.Product\\eCommerce.ProductTest\\eCommerce.ProductTest.csproj",
-        "projectName": "eCommerce.ProductTest",
-        "projectPath": "D:\\Miscellaneous\\Ravindra\\StudyMaterial\\NAGP\\Final\\eCommerce\\eCommerce.Product\\eCommerce.ProductTest\\eCommerce.ProductTest.csproj",
+        "projectUniqueName": "D:\\Miscellaneous\\Ravindra\\StudyMaterial\\NAGP\\Final\\eCommerce\\eCommerce.Product\\eCommerce.ProductService\\eCommerce.ProductService.csproj",
+        "projectName": "eCommerce.ProductService",
+        "projectPath": "D:\\Miscellaneous\\Ravindra\\StudyMaterial\\NAGP\\Final\\eCommerce\\eCommerce.Product\\eCommerce.ProductService\\eCommerce.ProductService.csproj",
         "packagesPath": "C:\\Users\\ravindra1436\\.nuget\\packages\\",
-        "outputPath": "D:\\Miscellaneous\\Ravindra\\StudyMaterial\\NAGP\\Final\\eCommerce\\eCommerce.Product\\eCommerce.ProductTest\\obj\\",
+        "outputPath": "D:\\Miscellaneous\\Ravindra\\StudyMaterial\\NAGP\\Final\\eCommerce\\eCommerce.Product\\eCommerce.ProductService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,6 +44,101 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.15.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            },
+            "WindowsAzure.Storage": {
+              "target": "Package",
+              "version": "[9.3.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.309\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Miscellaneous\\Ravindra\\StudyMaterial\\NAGP\\Final\\eCommerce\\eCommerce.Product\\eCommerce.ProductTest\\eCommerce.ProductTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Miscellaneous\\Ravindra\\StudyMaterial\\NAGP\\Final\\eCommerce\\eCommerce.Product\\eCommerce.ProductTest\\eCommerce.ProductTest.csproj",
+        "projectName": "eCommerce.ProductTest",
+        "projectPath": "D:\\Miscellaneous\\Ravindra\\StudyMaterial\\NAGP\\Final\\eCommerce\\eCommerce.Product\\eCommerce.ProductTest\\eCommerce.ProductTest.csproj",
+        "packagesPath": "C:\\Users\\ravindra1436\\.nuget\\packages\\",
+        "outputPath": "D:\\Miscellaneous\\Ravindra\\StudyMaterial\\NAGP\\Final\\eCommerce\\eCommerce.Product\\eCommerce.ProductTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ravindra1436\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Miscellaneous\\Ravindra\\StudyMaterial\\NAGP\\Final\\eCommerce\\eCommerce.Product\\eCommerce.ProductService\\eCommerce.ProductService.csproj": {
+                "projectPath": "D:\\Miscellaneous\\Ravindra\\StudyMaterial\\NAGP\\Final\\eCommerce\\eCommerce.Product\\eCommerce.ProductService\\eCommerce.ProductService.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.Extensions.Logging.Abstractions": {
               "target": "Package",
               "version": "[7.0.0, )"
