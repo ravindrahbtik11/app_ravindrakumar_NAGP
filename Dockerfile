@@ -1,8 +1,8 @@
- FROM node:16.15.1-alpine as build-step
+ FROM node:18.14.2-alpine as build-step
     RUN mkdir -p /app
     WORKDIR /app
     COPY package.json /app
-    RUN npm install --legacy-peer-deps
+    RUN npm install --force
     COPY . .
     RUN npm run build --prod
     FROM nginx:1.20.1
