@@ -14,11 +14,7 @@ pipeline{
 		stage('Start') {
 			steps {
 				echo '**Starting code check out**'
-<<<<<<< HEAD
-				git branch: 'ProductService', url: 'https://github.com/ravindrahbtik11/app_ravindrakumar_NAGP.git'
-=======
-				git branch: 'master', url: 'https://github.com/ravindrahbtik11/app_ravindrakumar.git'
->>>>>>> f41dd75c92eaf52d4c3dac696a9b9d18255eb664
+				git branch: 'UserService', url: 'https://github.com/ravindrahbtik11/app_ravindrakumar_NAGP.git'
 				echo '****Code check out Finished****'
 			}
 		}
@@ -29,7 +25,6 @@ pipeline{
 						echo '****Restore Nuget success****'
 					}
 			}
-<<<<<<< HEAD
 		// stage('Start sonarqube analysis') {
 		// 		steps {
 		// 			echo '**Start Sonar qube analysis**'
@@ -39,17 +34,6 @@ pipeline{
 		// 			echo '****Finished Sonar qube analysis****'
 		// 		}
 		// 	}
-=======
-		stage('Start sonarqube analysis') {
-				steps {
-					echo '**Start Sonar qube analysis**'
-						withSonarQubeEnv('Test_Sonar') {					
-							bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll begin /k:\"sonar-ravindrakumar\""
-						}
-					echo '****Finished Sonar qube analysis****'
-				}
-			}
->>>>>>> f41dd75c92eaf52d4c3dac696a9b9d18255eb664
 
 		stage('Code build'){
             steps {
@@ -66,7 +50,6 @@ pipeline{
                 echo '****Test case execution****'	
             }
         }
-<<<<<<< HEAD
         // stage('Stop sonarqube analysis') {
         //         steps {
         //         echo '**Stopping Sonar Qube analysis**'
@@ -105,46 +88,6 @@ pipeline{
 					// echo '**Creating horizontal pod autoscaler**' 
                     // bat 'kubectl apply -f .\\horizontalpodautoscaler.yml'
 					// echo '****horizontal pod autoscaler created****' 
-=======
-        stage('Stop sonarqube analysis') {
-                steps {
-                echo '**Stopping Sonar Qube analysis**'
-                  withSonarQubeEnv('Test_Sonar') {
-                        bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll end"
-					   
-                    }
-                echo '****Stopped Sonar Qube analysis****'
-                }
-            }        
-        
-		 stage('Kubernetes deployment'){
-            steps {
-					// echo '**Image building section**'
-					//  script{
-					// 	  echo '**Start building Docker image**'
-					// 		  dockerImage = docker.build("ravindrahbtik11/i-ravindrakumar-master:latest")
-					// 		  echo '****Image built****'
-					// 		  echo '**Start pushing Docker image**'
-					// 		  docker.withRegistry( '', 'DockerDetail' ) {
-					// 				 dockerImage.push('latest')
-					// 			}
-					// 		  echo '****Image pushed****'					 
-					// 	}	
-					// echo '****Done Image building and pushing into docker hub****'					
-										
-					echo '**Creating Config Map**' 
-                    bat 'kubectl apply -f .\\configmap.yml'
-					echo '****Config Map created****' 
-					echo '**Creating Secret**' 
-                    bat 'kubectl apply -f .\\secret.yml'
-					echo '****Secret created****'
-				    echo '**Creating Deployment**' 
-                    bat 'kubectl apply -f .\\deployment.yml'
-					echo '****Deployment created****' 
-					echo '**Creating horizontal pod autoscaler**' 
-                    bat 'kubectl apply -f .\\horizontalpodautoscaler.yml'
-					echo '****horizontal pod autoscaler created****' 
->>>>>>> f41dd75c92eaf52d4c3dac696a9b9d18255eb664
                 }
          }
 		 stage('End'){
