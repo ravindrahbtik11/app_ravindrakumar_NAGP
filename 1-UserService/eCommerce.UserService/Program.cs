@@ -7,6 +7,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<UserServiceContext>(options =>
 {
+<<<<<<< HEAD
+=======
+    //.UseSqlServer(
+    //        @"Server=(localdb)\mssqllocaldb;Database=EFMiscellanous.ConnectionResiliency;Trusted_Connection=True;ConnectRetryCount=0",
+    //        options => options.EnableRetryOnFailure());
+
+>>>>>>> f41dd75c92eaf52d4c3dac696a9b9d18255eb664
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     options.UseSqlServer(connectionString, options => options.EnableRetryOnFailure());
 });
