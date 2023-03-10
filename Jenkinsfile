@@ -66,7 +66,7 @@ pipeline{
 					echo '**Image building section**'
 					 script{
 						  echo '**Start building Docker image**'
-							  dockerImage = docker.build("ravindrahbtik11/i-ravindrakumar-productservice:${BUILD_NUMBER}")
+							  dockerImage = docker.build("ravindrahbtik11/i-ravindrakumar-product:${BUILD_NUMBER}")
 							  echo '****Image built****'
 							  echo '**Start pushing Docker image**'
 							  docker.withRegistry( '', 'DockerDetail' ) {
@@ -82,12 +82,12 @@ pipeline{
 					// echo '**Creating Secret**' 
                     // bat 'kubectl apply -f .\\secret.yml'
 					// echo '****Secret created****'
-				    // echo '**Creating Deployment**' 
-                    // bat 'kubectl apply -f .\\deployment.yml'
-					// echo '****Deployment created****' 
-					// echo '**Creating horizontal pod autoscaler**' 
-                    // bat 'kubectl apply -f .\\horizontalpodautoscaler.yml'
-					// echo '****horizontal pod autoscaler created****' 
+				    echo '**Creating Deployment**' 
+                    bat 'kubectl apply -f .\\deployment.yml'
+					echo '****Deployment created****' 
+					echo '**Creating horizontal pod autoscaler**' 
+                    bat 'kubectl apply -f .\\horizontalpodautoscaler.yml'
+					echo '****horizontal pod autoscaler created****' 
                 }
          }
 		 stage('End'){

@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nagp-product-dev
+  namespace: kubernetes-cluster-ravindrakumar
+  labels:
+    app: nagp-product-dev
+spec:
+  template:
+    metadata:
+      labels:
+        app: nagp-product-dev
+        type: product
+    spec:
+      containers:
+      - name: nagp-product-dev
+        image: ravindrahbtik11/i-ravindrakumar-product:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nagp-product-dev
+      type: product
+        
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nagp-product-dev
+  name: nagp-product-dev
+  namespace: kubernetes-cluster-ravindrakumar
+spec:
+  ports:
+  - nodePort: 31110
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: nagp-product-dev
+    type: product
+  type: LoadBalancer
+
+      
+      
+      
+      
+      
+  
