@@ -121,8 +121,6 @@ D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\e
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\Azure.Core.dll
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\Azure.Identity.dll
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\Castle.Core.dll
-D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\EntityFramework.SqlServer.dll
-D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\EntityFramework.dll
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
@@ -171,9 +169,7 @@ D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\e
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\System.CodeDom.dll
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\System.Data.SqlClient.dll
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\System.Drawing.Common.dll
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\System.Memory.Data.dll
@@ -258,11 +254,6 @@ D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\e
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
-D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
-D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
-D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
