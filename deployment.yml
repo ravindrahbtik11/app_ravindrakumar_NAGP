@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nagp-main-dev
+  namespace: kubernetes-cluster-ravindrakumar
+  labels:
+    app: nagp-main-dev
+spec:
+  template:
+    metadata:
+      labels:
+        app: nagp-main-dev
+        type: main
+    spec:
+      containers:
+      - name: nagp-main-dev
+        image: ravindrahbtik11/i-ravindrakumar-main:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nagp-main-dev
+      type: main
+        
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nagp-main-dev
+  name: nagp-main-dev
+  namespace: kubernetes-cluster-ravindrakumar
+spec:
+  ports:
+  - nodePort: 31210
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: nagp-main-dev
+    type: main
+  type: LoadBalancer
+
+      
+      
+      
+      
+      
+  

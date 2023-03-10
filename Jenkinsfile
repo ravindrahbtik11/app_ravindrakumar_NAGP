@@ -45,15 +45,21 @@ pipeline{
 					echo '**Image building section**'
 					 script{
 						  echo '**Start building Docker image**'
-							  dockerImage = docker.build("ravindrahbtik11/i-ravindrakumar-web:${BUILD_NUMBER}")
+							  dockerImage = docker.build("ravindrahbtik11/i-ravindrakumar-web:latest")
 							  echo '****Image built****'
 							  echo '**Start pushing Docker image**'
 							  docker.withRegistry( '', 'DockerDetail' ) {
-									 dockerImage.push()
+									 dockerImage.push('latest')
 								}
 							  echo '****Image pushed****'					 
 						}	
-					echo '****Done Image building and pushing into docker hub****'					
+						 echo '****Done Image building and pushing into docker hub****'	
+						 echo '**creating deployment**' 
+						 bat 'kubectl apply -f .\\deployment.yml'
+						 echo '****deployment created****' 
+						 echo '**creating horizontal pod autoscaler**' 
+						 bat 'kubectl apply -f .\\horizontalpodautoscaler.yml'
+						 echo '****horizontal pod autoscaler created****' 					
 						
                 }
          }
