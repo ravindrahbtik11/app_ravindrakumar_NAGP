@@ -40,6 +40,7 @@ spec:
     port: 8080
     protocol: TCP
     targetPort: 8080
+  sessionAffinity: None
   selector:
     app: nagp-product-dev
     type: product

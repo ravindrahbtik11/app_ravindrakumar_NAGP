@@ -276,3 +276,12 @@ D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\e
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\obj\Debug\net6.0\eCommerce.ProductTest.pdb
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\obj\Debug\net6.0\eCommerce.ProductTest.genruntimeconfig.cache
 D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\eCommerce\eCommerce.Product\eCommerce.ProductTest\obj\Debug\net6.0\ref\eCommerce.ProductTest.dll
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\Test\eCommerce.ProductService\eCommerce.ProductTest\bin\Debug\net6.0\CoverletSourceRootsMapping
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\Test\eCommerce.ProductService\eCommerce.ProductTest\obj\Debug\net6.0\eCommerce.ProductTest.csproj.AssemblyReference.cache
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\Test\eCommerce.ProductService\eCommerce.ProductTest\obj\Debug\net6.0\eCommerce.ProductTest.GeneratedMSBuildEditorConfig.editorconfig
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\Test\eCommerce.ProductService\eCommerce.ProductTest\obj\Debug\net6.0\eCommerce.ProductTest.AssemblyInfoInputs.cache
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\Test\eCommerce.ProductService\eCommerce.ProductTest\obj\Debug\net6.0\eCommerce.ProductTest.AssemblyInfo.cs
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\Test\eCommerce.ProductService\eCommerce.ProductTest\obj\Debug\net6.0\eCommerce.ProductTest.csproj.CoreCompileInputs.cache
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\Test\eCommerce.ProductService\eCommerce.ProductTest\obj\Debug\net6.0\eCommerce.ProductTest.dll
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\Test\eCommerce.ProductService\eCommerce.ProductTest\obj\Debug\net6.0\refint\eCommerce.ProductTest.dll
+D:\Miscellaneous\Ravindra\StudyMaterial\NAGP\Final\Test\eCommerce.ProductService\eCommerce.ProductTest\obj\Debug\net6.0\eCommerce.ProductTest.pdb
