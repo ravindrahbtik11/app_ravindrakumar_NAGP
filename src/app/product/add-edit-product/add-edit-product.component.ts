@@ -63,7 +63,7 @@ export class AddEditProductComponent implements OnInit {
 
     }
     getProductDetail() {
-        const url = 'https://localhost:44392/api/product';
+        const url = AppSettings.Product;
         this.productService.getDetail(url).subscribe(response => {
             if (response) {
                 console.log(response);
