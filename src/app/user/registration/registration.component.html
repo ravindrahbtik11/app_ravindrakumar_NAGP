@@ -10,7 +10,8 @@
                 <div class="row">
                     <div class="col-md-12 form-group helpblock">
                         <mat-form-field>
-                            <input matInput id="txtEmailAddress" placeholder="Your Email Address"
+                            <mat-label>Email Address</mat-label>
+                            <input matInput id="txtEmailAddress" placeholder="Enter Email Address"
                                 autocomplete="new-email" name="emailAddress" [(ngModel)]="model.emailAddress"
                                 #emailAddress="ngModel" required />
                         </mat-form-field>
@@ -21,7 +22,8 @@
                 <div class="row">
                     <div class="col-md-12 form-group helpblock">
                         <mat-form-field>
-                            <input matInput id="txtPassword" placeholder="Choose Password" name="password"
+                            <mat-label>Password</mat-label>
+                            <input matInput id="txtPassword" placeholder="Enter Password" name="password"
                                 type="password" [(ngModel)]="model.password" #password="ngModel" required
                                 autocomplete="new-password" />
                         </mat-form-field>
@@ -32,7 +34,8 @@
                 <div class="row">
                     <div class="col-md-12 form-group helpblock">
                         <mat-form-field>
-                            <input matInput id="txtConfirmPassword" placeholder="Choose Confirm Password"
+                            <mat-label>Confirm Password</mat-label>
+                            <input matInput id="txtConfirmPassword" placeholder="Enter Confirm Password"
                                 name="confirmPassword" type="password" [(ngModel)]="model.confirmPassword"
                                 #confirmPassword="ngModel" required autocomplete="new-password" />
                         </mat-form-field>
