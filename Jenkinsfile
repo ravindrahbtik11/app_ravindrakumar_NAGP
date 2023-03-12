@@ -82,12 +82,12 @@ pipeline{
 					// echo '**Creating Secret**' 
                     // bat 'kubectl apply -f .\\secret.yml'
 					// echo '****Secret created****'
-				    echo '**Creating Deployment**' 
-                    bat 'kubectl apply -f .\\deployment.yml'
-					echo '****Deployment created****' 
-					echo '**Creating horizontal pod autoscaler**' 
-                    bat 'kubectl apply -f .\\horizontalpodautoscaler.yml'
-					echo '****horizontal pod autoscaler created****' 
+				    // echo '**Creating Deployment**' 
+                    // bat 'kubectl apply -f .\\deployment.yml'
+					// echo '****Deployment created****' 
+					// echo '**Creating horizontal pod autoscaler**' 
+                    // bat 'kubectl apply -f .\\horizontalpodautoscaler.yml'
+					// echo '****horizontal pod autoscaler created****' 
                 }
          }
 		 stage('End'){

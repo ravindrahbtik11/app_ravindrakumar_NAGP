@@ -7,7 +7,6 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build
 WORKDIR /app
 
 EXPOSE 8080
-
 EXPOSE 443
 
 # Install production dependencies.
