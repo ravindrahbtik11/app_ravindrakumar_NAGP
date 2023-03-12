@@ -87,7 +87,7 @@ export class AddEditProductComponent implements OnInit {
     }
 
     saveProductDetail(form: any) {
-        this.authService.startLoader();
+        // this.authService.startLoader();
         const url = AppSettings.Product;
         this.productService.postData(url, this.model).subscribe(response => {
             this.authService.stopLoader();
