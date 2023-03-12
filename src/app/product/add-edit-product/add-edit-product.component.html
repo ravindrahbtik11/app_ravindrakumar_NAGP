@@ -8,7 +8,7 @@
         class="sm-form-group">
         <div class="row">
             <div class="col-md-1"></div>
-            <div class="col-md-3 form-group">
+            <div class="col-md-4 form-group">
                 <div [ngClass]="{ 'has-error': productForm.submitted && !productName.valid }">
                     <mat-form-field  class="example-full-width">
                         <mat-label>Product Name</mat-label>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 form-group">
+            <div class="col-md-3 form-group">
                 <div [ngClass]="{ 'has-error': productForm.submitted && !buyingPrice.valid }">
                     <mat-form-field>
                         <mat-label>Product Buying Price</mat-label>
@@ -47,7 +47,7 @@
         </div>
         <div class="row">
             <div class="col-md-1"></div>
-            <div class="col-md-3 form-group">
+            <div class="col-md-4 form-group">
                 <div [ngClass]="{ 'has-error': productForm.submitted && !expiry.valid }">
                     <mat-form-field>
                         <mat-label>Expiry Date</mat-label>
@@ -72,7 +72,7 @@
                     <!-- <div *ngIf="productForm.submitted && !price.valid" class="help-block">Product price is required. -->
                 </div>
             </div>
-            <div class="col-md-4 form-group">
+            <div class="col-md-3 form-group">
                 <div >
                     <mat-form-field>
                         <mat-label>Product Selling Price</mat-label>
@@ -89,7 +89,7 @@
         <div class="row m-t-20 m-b-20">
             <div class="col-md-1"></div>
             
-            <div class="col-md-3 form-group">
+            <div class="col-md-4 form-group">
                 <div >
                     <mat-form-field>
                         <mat-label>Category</mat-label>
@@ -114,22 +114,8 @@
                 </div>
                 
             </div>
-            <div class="col-md-4 form-group">
+            <div class="col-md-3 form-group">
                 <div>
-                    <!-- <div class="sm-container-medium clearfix">
-                        <div class="fileUpload">
-                            <input id="uploadBtn" type="file" title="Browse" class="upload" accept="{{acceptType}}"
-                            name="fileUploader" #fileUpload />
-                            <input type="file" class="file-input"  (change)="onFileSelected($event)" #fileUpload>
-                            <input id="uploadBtn" type="file" title="Browse" class="upload" accept="{{acceptType}}"
-                                name="fileUploader" (change)="onFileSelected($event)" #fileUpload />
-                                <div class="file-upload">
-                                    {{fileName || "No file uploaded yet."}}
-                                 </div>
-                                 <eca-file-uploader [isDragable]="true" [uploadType]="uploadType" [uploadUrl]="uploadUrl" [allowFileType]="allowFileType"
-                                (uploadCompleteHandler)="uploadComplete($event)"></eca-file-uploader>
-                        </div>
-                    </div> -->
                     <div [ngClass]="{ 'has-error': productForm.submitted && !quantity.valid }">
                         <mat-form-field>
                             <mat-label>Quantity</mat-label>
@@ -149,10 +135,6 @@
             <div class="col-md-1"></div>
             <div class="col-md-7">
                 <div>
-                    <!-- <mat-form-field>
-                        <input matInput id="txtDescription" placeholder="Product description" name="description"
-                            [(ngModel)]="model.description" #description="ngModel" required />
-                    </mat-form-field> -->
                     <mat-form-field  class="example-full-width">
                         <mat-label>Product Description</mat-label>
                         <textarea #description class="txtDescription" rows="2"
