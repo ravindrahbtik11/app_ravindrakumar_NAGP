@@ -4,7 +4,7 @@
         <div class="pull-right m-r-10"><button (click)="addProduct()">Add Product</button></div>
     </h3>
     <div class="view">
-        <div class="row">
+        <div class="row" *ngIf="productList?.length > 0">
             <div class="col-md-3" *ngFor="let product of productList let i = index">
                 <div class="card">
                     <div class="card-internal">

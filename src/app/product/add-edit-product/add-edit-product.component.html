@@ -10,8 +10,9 @@
             <div class="col-md-1"></div>
             <div class="col-md-3 form-group">
                 <div [ngClass]="{ 'has-error': productForm.submitted && !productName.valid }">
-                    <mat-form-field>
-                        <input matInput id="txtName" placeholder="Product Name" name="productName"
+                    <mat-form-field  class="example-full-width">
+                        <mat-label>Product Name</mat-label>
+                        <input matInput id="txtName" placeholder="Enter Product Name" name="productName"
                             [(ngModel)]="model.name" #productName="ngModel" required />
                     </mat-form-field>
                     <div *ngIf="productForm.submitted && !productName.valid" class="help-block">Product name is
@@ -22,7 +23,8 @@
             <div class="col-md-3 form-group">
                 <div [ngClass]="{ 'has-error': productForm.submitted && !MRP.valid }">
                     <mat-form-field>
-                        <input matInput id="txtpMRP" placeholder="Product MRP" name="MRP" [(ngModel)]="model.MRP"
+                        <mat-label>Product MRP</mat-label>
+                        <input matInput id="txtpMRP" placeholder="Enter Product MRP" name="MRP" [(ngModel)]="model.MRP"
                             #MRP="ngModel" required />
                     </mat-form-field>
                     <div *ngIf="productForm.submitted && !MRP.valid" class="help-block">Product MRP is required.
@@ -32,7 +34,8 @@
             <div class="col-md-4 form-group">
                 <div [ngClass]="{ 'has-error': productForm.submitted && !buyingPrice.valid }">
                     <mat-form-field>
-                        <input matInput id="txtpBuyingPrice" placeholder="Product Buying Price" name="buyingPrice"
+                        <mat-label>Product Buying Price</mat-label>
+                        <input matInput id="txtpBuyingPrice" placeholder="Enter Product Buying Price" name="buyingPrice"
                             [(ngModel)]="model.buyingPrice" #buyingPrice="ngModel" required />
                     </mat-form-field>
                     <div *ngIf="productForm.submitted && !buyingPrice.valid" class="help-block">Product buying price is
@@ -47,20 +50,22 @@
             <div class="col-md-3 form-group">
                 <div [ngClass]="{ 'has-error': productForm.submitted && !expiry.valid }">
                     <mat-form-field>
-                        <input matInput [matDatepicker]="expiryDate" readonly="readonly" placeholder="Expiry Date"
-                            [(ngModel)]="model.expiry" required name="expiry" #expiry="ngModel">
+                        <mat-label>Expiry Date</mat-label>
+                        <input matInput [matDatepicker]="expiryDate" readonly="readonly" placeholder="Select Expiry Date"
+                            [(ngModel)]="model.expiry" name="expiry" #expiry="ngModel">
                         <mat-datepicker-toggle matSuffix [for]="expiryDate"></mat-datepicker-toggle>
                         <mat-datepicker #expiryDate></mat-datepicker>
                     </mat-form-field>
-                    <div *ngIf="productForm.submitted && !expiry.valid" class="help-block">Expiry Date is
+                    <!-- <div *ngIf="productForm.submitted && !expiry.valid" class="help-block">Expiry Date is
                         required.
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-md-3 form-group">
                 <div >
-                    <mat-form-field>
-                        <input matInput id="txtpMinimumSellingPrice" placeholder="Product Minimum Selling Price Price"
+                    <mat-form-field  class="example-full-width">
+                        <mat-label>Minimum Selling Price</mat-label>
+                        <input matInput id="txtpMinimumSellingPrice" placeholder="Enter Minimum Selling Price"
                             name="MinimumSellingPrice" [(ngModel)]="model.MinimumSellPrice"
                             #MinimumSellingPrice="ngModel" />
                     </mat-form-field>
@@ -70,7 +75,8 @@
             <div class="col-md-4 form-group">
                 <div >
                     <mat-form-field>
-                        <input matInput id="txtpMinimumSellingPrice" placeholder="Product Selling Price Price"
+                        <mat-label>Product Selling Price</mat-label>
+                        <input matInput id="txtpMinimumSellingPrice" placeholder="Enter Selling Price"
                             name="sellingPrice" [(ngModel)]="model.sellingPrice"
                             #sellingPrice="ngModel" />
                     </mat-form-field>
@@ -86,6 +92,7 @@
             <div class="col-md-3 form-group">
                 <div >
                     <mat-form-field>
+                        <mat-label>Category</mat-label>
                         <mat-select id="ddlCategory" placeholder="Select Category"  ngDefaultControl [(ngModel)]="model.CategoryId" name="category">
                             <mat-option *ngFor="let c of categoryies" [value]="c.value">{{c.name}}</mat-option>
                         </mat-select>
@@ -96,6 +103,7 @@
             <div class="col-md-3 form-group">
                 <div [ngClass]="{ 'has-error': productForm.submitted && !brand.valid }">
                     <mat-form-field>
+                        <mat-label>Brand</mat-label>
                         <mat-select id="ddlBrand" ngDefaultControl  placeholder="Select Brand"  [(ngModel)]="model.brand" name="brand"
                             #brand="ngModel" required>
                             <mat-option *ngFor="let br of brands" [value]="br.value">{{br.name}}</mat-option>
@@ -124,7 +132,8 @@
                     </div> -->
                     <div [ngClass]="{ 'has-error': productForm.submitted && !quantity.valid }">
                         <mat-form-field>
-                            <input matInput id="txtQuantity" placeholder="Product quantity" name="quantity"
+                            <mat-label>Quantity</mat-label>
+                            <input matInput id="txtQuantity" placeholder="Enter quantity" name="quantity"
                                 [(ngModel)]="model.quantity" #quantity="ngModel" required type="number" min="0" />
                         </mat-form-field>
                         <div *ngIf="productForm.submitted && !quantity.valid" class="help-block">Product quantity is
@@ -138,15 +147,16 @@
         </div>
         <div class="row m-t-20 m-b-20">
             <div class="col-md-1"></div>
-            <div class="col-md-7 form-group">
+            <div class="col-md-7">
                 <div>
                     <!-- <mat-form-field>
                         <input matInput id="txtDescription" placeholder="Product description" name="description"
                             [(ngModel)]="model.description" #description="ngModel" required />
                     </mat-form-field> -->
-                    <mat-form-field>
-                        <textarea #description class="txtDescription" rows="4"
-                            autocomplete="off" name="description" placeholder="Product description"  maxlength="4000" matInput [(ngModel)]="model.description"
+                    <mat-form-field  class="example-full-width">
+                        <mat-label>Product Description</mat-label>
+                        <textarea #description class="txtDescription" rows="2"
+                            autocomplete="off" name="description" placeholder="Enter Product description"  maxlength="4000" matInput [(ngModel)]="model.description"
                             #value="ngModel"></textarea>
                     </mat-form-field>
                 </div>

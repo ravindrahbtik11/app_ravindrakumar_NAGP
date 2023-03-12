@@ -6,15 +6,15 @@ import { Observable } from 'rxjs';
 
 // Class use to over load http service methods
 
-export class ECAHttpService implements HttpInterceptor {
+export class ECAHttpService {
 
-    intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        request = request.clone({
-            withCredentials: false
-        });
+    // intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    //     request = request.clone({
+    //         withCredentials: false
+    //     });
 
-        return next.handle(request);
-    }
+    //     return next.handle(request);
+    // }
 
 
     constructor(public http: HttpClient) { }
@@ -60,7 +60,7 @@ export class ECAHttpService implements HttpInterceptor {
             }
         }
         if (!options.headers.get('Content-Type')) {
-            options.headers = options.headers.append('Content-Type', 'application/json; charset=utf-8');
+            options.headers = options.headers.append('Content-Type', 'application/json');
         }
 
 
@@ -75,11 +75,11 @@ export class ECAHttpService implements HttpInterceptor {
 
     // Method use to concatenate random number in url
     public getUrlWithRandomNumber(url: string) {
-        if (url && url.length > 0 && url.indexOf('?') > -1) {
-            url = url + '&a=' + Math.random();
-        } else {
-            url = url + '?a=' + Math.random();
-        }
+        // if (url && url.length > 0 && url.indexOf('?') > -1) {
+        //     url = url + '&a=' + Math.random();
+        // } else {
+        //     url = url + '?a=' + Math.random();
+        // }
         return url;
     }
 

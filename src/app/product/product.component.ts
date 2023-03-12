@@ -69,7 +69,7 @@ export class ProductComponent implements OnInit {
     getProductDetail() {
         const url = AppSettings.Product;
         this.productService.getDetail(url).subscribe(response => {
-            if (response && response.length > 0) {
+            if (response && response.length > 1 || (response.length === 1 && response[0])) {
                 this.productList = response;
             }
         });

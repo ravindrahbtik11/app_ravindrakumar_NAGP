@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'css/toaster.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 .header {
@@ -902,7 +903,11 @@ h3 {
 }
 
 .mat-form-field {
-    width: 95%;
+    width: 95% !important;
+}
+
+.mat-mdc-form-field {
+    width: 95% !important;
 }
 
 .view {
@@ -920,4 +925,7 @@ button {
     text-align: center;
     cursor: pointer;
     font-size: 14px;
+}
+textarea {
+    resize: none;
   }
