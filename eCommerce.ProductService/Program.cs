@@ -17,15 +17,15 @@ builder.Services.AddDbContext<ProductContext>(options =>
 });
 
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:4200", "http://localhost:7090/", "http://localhost:8090/")
-                .SetIsOriginAllowedToAllowWildcardSubdomains().AllowAnyMethod().AllowAnyHeader().AllowCredentials();
-        });
-});
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: MyAllowSpecificOrigins,
+//        policy =>
+//        {
+//            policy.WithOrigins("http://localhost:4200", "http://localhost:7090/", "http://localhost:8090/")
+//                .SetIsOriginAllowedToAllowWildcardSubdomains().AllowAnyMethod().AllowAnyHeader().AllowCredentials();
+//        });
+//});
 
 
 // Add services to the container.
@@ -47,7 +47,12 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-app.UseCors(MyAllowSpecificOrigins);
+//app.UseCors(MyAllowSpecificOrigins);
+app.UseCors(builder => builder
+.AllowAnyHeader()
+.AllowAnyMethod()
+.SetIsOriginAllowed((host) => true)
+.AllowCredentials());
 app.MapControllers();
 
 app.Run();
