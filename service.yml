@@ -14,4 +14,4 @@ spec:
   selector:
     app: nagp-product-dev
     type: develop
-  type: LoadBalancer
+  type: LoadBalancer22
