@@ -76,12 +76,12 @@ pipeline{
 						}	
 					echo '****Done Image building and pushing into docker hub****'					
 										
-					echo '**Creating Config Map**' 
-                    bat 'kubectl apply -f .\\configmap.yml'
-					echo '****Config Map created****' 
-					echo '**Creating Secret**' 
-                    bat 'kubectl apply -f .\\secret.yml'
-					echo '****Secret created****'
+					// echo '**Creating Config Map**' 
+                    // bat 'kubectl apply -f .\\configmap.yml'
+					// echo '****Config Map created****' 
+					// echo '**Creating Secret**' 
+                    // bat 'kubectl apply -f .\\secret.yml'
+					// echo '****Secret created****'
 				    echo '**Creating Deployment**' 
                     bat 'kubectl apply -f .\\deployment.yml'
 					echo '****Deployment created****' 
