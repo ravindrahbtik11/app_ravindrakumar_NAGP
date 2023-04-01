@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -21,12 +20,11 @@ namespace eCommerce.ProductService.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     MRP = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    BuyingPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Expiry = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    MinimumSellPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Brand = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Brand = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SellingPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false)
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    Size = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Color = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

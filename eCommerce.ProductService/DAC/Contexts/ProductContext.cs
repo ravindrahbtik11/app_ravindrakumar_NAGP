@@ -16,5 +16,18 @@ namespace eCommerce.ProductService.DAC.Contexts
         {
 
         }
+
+        //protected override void Seed(ProductContext context)
+        //{
+        //    IList<Product> defaultStandards = new List<Product>();
+
+        //    defaultStandards.Add(new Product() { StandardName = "Standard 1", Description = "First Standard" });
+        //    defaultStandards.Add(new Product() { StandardName = "Standard 2", Description = "Second Standard" });
+        //    defaultStandards.Add(new Product() { StandardName = "Standard 3", Description = "Third Standard" });
+
+        //    context.Standards.AddRange(defaultStandards);
+
+        //    base.Seed(context);
+        //}
     }
 }

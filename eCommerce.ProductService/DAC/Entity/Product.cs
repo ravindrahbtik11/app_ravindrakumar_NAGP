@@ -8,6 +8,9 @@ namespace eCommerce.ProductService.DAC.Entity
         public Product()
         {
             this.Name = string.Empty;
+            this.Size = string.Empty;
+            this.Brand = string.Empty;
+            this.Color = string.Empty;
         }
 
         [Key]
@@ -21,14 +24,13 @@ namespace eCommerce.ProductService.DAC.Entity
         public int CategoryId { get; set; }
 
         public decimal MRP { get; set; }
-
-        public decimal BuyingPrice { get; set; }
-
-        public DateTime Expiry { get; set; }
-        public decimal MinimumSellPrice { get; set; }
-        public string? Brand { get; set; }
+        public string Brand { get; set; }
         public decimal SellingPrice { get; set; }
         public int Quantity { get; set; }
+
+        public string Size { get; set; }
+
+        public string Color { get; set; }
     }
 
     public class ProductDTO
@@ -47,14 +49,13 @@ namespace eCommerce.ProductService.DAC.Entity
         public int CategoryId { get; set; }
 
         public decimal MRP { get; set; }
-
-        public decimal BuyingPrice { get; set; }
-
-        public DateTime Expiry { get; set; }
-        public decimal MinimumSellPrice { get; set; }
         public string? Brand { get; set; }
         public decimal SellingPrice { get; set; }
         public int Quantity { get; set; }
+
+        public string? Size { get; set; }
+
+        public string? Color { get; set; }
 
         public byte[] FormData { get; set; }
     }

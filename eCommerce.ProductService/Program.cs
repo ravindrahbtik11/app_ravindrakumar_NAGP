@@ -7,13 +7,13 @@ var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 // Add services to the container.
 builder.Services.AddDbContext<ProductContext>(options =>
 {
-    //.UseSqlServer(
+    //options.UseSqlServer(
     //        @"Server=(localdb)\mssqllocaldb;Database=EFMiscellanous.ConnectionResiliency;Trusted_Connection=True;ConnectRetryCount=0",
     //        options => options.EnableRetryOnFailure());
 
-    //var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-    //options.UseSqlServer(connectionString,options=>options.EnableRetryOnFailure());
-    options.UseInMemoryDatabase(databaseName: "ProductDb");
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    options.UseSqlServer(connectionString, options => options.EnableRetryOnFailure());
+    //options.UseInMemoryDatabase(databaseName: "ProductDb");
 });
 
 

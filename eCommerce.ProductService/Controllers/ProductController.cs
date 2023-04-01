@@ -3,6 +3,7 @@ using eCommerce.ProductService.DAC.Entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
+using System.Collections.Generic;
 using System.Linq;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -26,9 +27,50 @@ namespace eCommerce.ProductService.Controllers
 
         // GET: api/<ProductController>
         [HttpGet]
-        public IEnumerable<Product> Get()
+        public IEnumerable<Product> Get(string? size, string? brand, string? color, string? name)
         {
-            return _dbContext.Products.DefaultIfEmpty().ToList();
+            string[] brands = null;
+            string[] colors = null;
+            string[] sizes = null;
+            if (name == null)
+            {
+                name = string.Empty;
+            }
+           
+            if (brand == null)
+            {
+                brand = string.Empty;
+            }
+            else
+            {
+                brands = brand.Split(',');
+            }
+            if (size == null)
+            {
+                size = string.Empty;
+            }
+            else
+            {
+                sizes = size.Split(',');
+            }
+            if (color == null)
+            {
+                color = string.Empty;
+            }
+            else
+            {
+                colors = color.Split(',');
+            }
+
+            List<Product> products = new List<Product>();
+            products = _dbContext.Products.DefaultIfEmpty().ToList();
+            if (products.Count > 0)
+            {
+                products = products.Where(p => (p.Name.Contains(name) || name == string.Empty) && (size == string.Empty || sizes.Any(s => s.Contains(p.Size))) &&
+          (brand == string.Empty || brands.Any(s => s.Contains(p.Brand))) && (color == string.Empty || colors.Any(s => s.Contains(p.Color)))).ToList();
+            }
+
+            return products;
         }
 
         // GET api/<ProductController>/5
@@ -67,7 +109,7 @@ namespace eCommerce.ProductService.Controllers
         }
 
         [HttpPost(nameof(UploadFile))]
-        public async Task<IActionResult> UploadFile([FromForm]  IFormFile file)
+        public async Task<IActionResult> UploadFile([FromForm] IFormFile file)
         {
             string systemFileName = file.FileName;
             string blobstorageconnection = _configuration.GetValue<string>("BlobConnectionString");
