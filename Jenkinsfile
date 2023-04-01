@@ -64,16 +64,16 @@ pipeline{
 		 stage('Kubernetes deployment'){
             steps {
 					echo '**Image building section**'
-					 script{
-						  echo '**Start building Docker image**'
-							  dockerImage = docker.build("ravindrahbtik11/i-ravindrakumar-productservice:${BUILD_NUMBER}")
-							  echo '****Image built****'
-							  echo '**Start pushing Docker image**'
-							  docker.withRegistry( '', 'DockerDetail' ) {
-									 dockerImage.push()
-								}
-							  echo '****Image pushed****'					 
-						}	
+					//  script{
+					// 	  echo '**Start building Docker image**'
+					// 		  dockerImage = docker.build("ravindrahbtik11/i-ravindrakumar-productservice:${BUILD_NUMBER}")
+					// 		  echo '****Image built****'
+					// 		  echo '**Start pushing Docker image**'
+					// 		  docker.withRegistry( '', 'DockerDetail' ) {
+					// 				 dockerImage.push()
+					// 			}
+					// 		  echo '****Image pushed****'					 
+					// 	}	
 					echo '****Done Image building and pushing into docker hub****'					
 										
 					// echo '**Creating Config Map**' 
