@@ -64,21 +64,30 @@ pipeline{
 		 stage('Kubernetes deployment'){
             steps {
 					echo '**Image building section**'
-					
+					 script{
+						  echo '**Start building Docker image**'
+							  dockerImage = docker.build("ravindrahbtik11/i-ravindrakumar-product:latest")
+							  echo '****Image built****'
+							  echo '**Start pushing Docker image**'
+							  docker.withRegistry( '', 'DockerDetail' ) {
+									 dockerImage.push('latest')
+								}
+							  echo '****Image pushed****'					 
+						}	
 					echo '****Done Image building and pushing into docker hub****'					
 										
-					// echo '**Creating Config Map**' 
-                    // bat 'kubectl apply -f .\\configmap.yml'
-					// echo '****Config Map created****' 
-					// echo '**Creating Secret**' 
-                    // bat 'kubectl apply -f .\\secret.yml'
-					// echo '****Secret created****'
-				    // echo '**Creating Deployment**' 
-                    // bat 'kubectl apply -f .\\deployment.yml'
-					// echo '****Deployment created****' 
-					// echo '**Creating horizontal pod autoscaler**' 
-                    // bat 'kubectl apply -f .\\horizontalpodautoscaler.yml'
-					// echo '****horizontal pod autoscaler created****' 
+					echo '**Creating Config Map**' 
+                    bat 'kubectl apply -f .\\configmap.yml'
+					echo '****Config Map created****' 
+					echo '**Creating Secret**' 
+                    bat 'kubectl apply -f .\\secret.yml'
+					echo '****Secret created****'
+				    echo '**Creating Deployment**' 
+                    bat 'kubectl apply -f .\\deployment.yml'
+					echo '****Deployment created****' 
+					echo '**Creating horizontal pod autoscaler**' 
+                    bat 'kubectl apply -f .\\horizontalpodautoscaler.yml'
+					echo '****horizontal pod autoscaler created****' 
                 }
          }
 		 stage('End'){
