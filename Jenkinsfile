@@ -1,9 +1,9 @@
 pipeline{
     agent any
     environment{
-        scannerHome = tool 'sonar_scanner_dotnet'
-        username='admin'
-        appname='sonar-ravindrakumar'   
+        //scannerHome = tool 'sonar_scanner_dotnet'
+       // username='admin'
+        //appname='sonar-ravindrakumar'   
     }
     options {
         skipDefaultCheckout(true)
