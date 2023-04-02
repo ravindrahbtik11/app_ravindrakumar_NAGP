@@ -10,9 +10,10 @@ using System.Linq;
 
 namespace eCommerce.ProductService.Controllers
 {
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : ControllerBase
+    public class ProductController : BaseController
     {
         private IHttpContextAccessor Accessor;
         private ProductContext _dbContext;
@@ -64,7 +65,7 @@ namespace eCommerce.ProductService.Controllers
 
             List<Product> products = new List<Product>();
             products = _dbContext.Products.DefaultIfEmpty().ToList();
-            if (products.Count > 0)
+            if (products.Count > 0 && products[0] != null)
             {
                 products = products.Where(p => (p.Name.Contains(name) || name == string.Empty) && (size == string.Empty || sizes.Any(s => s.Contains(p.Size))) &&
           (brand == string.Empty || brands.Any(s => s.Contains(p.Brand))) && (color == string.Empty || colors.Any(s => s.Contains(p.Color)))).ToList();
