@@ -7,6 +7,7 @@ import { ToastMesssageType } from '../app/shared/components/toaster/toast-messag
 import { AppSettings } from './app.settings';
 import { LoginModel } from './login/login.model';
 import { ECAHttpService } from './shared/services';
+import { AccountService } from './login/account.service';
 
 @Injectable()
 
@@ -24,7 +25,8 @@ export class AuthService {
     public currentPath: string;
     public menus: any;
     errorMessage: any;
-    constructor(private routes: Router, private http: ECAHttpService) {
+    constructor(private routes: Router, private http: ECAHttpService,
+        private accountService: AccountService) {
         this.userInfo = new LoginModel();
         this.currentPath = window.location.pathname;
         this.redirectUser();
@@ -33,7 +35,7 @@ export class AuthService {
     // Method use to login in application
     public login(userName: string, password: string) {
         this.loginEmitter.emit(true);
-        return true;
+        this.userInfo.isUserLoggedIn = true;
     }
 
     // Method use to logout from application
@@ -43,14 +45,8 @@ export class AuthService {
         this.userInfo = new LoginModel();
         localStorage.clear();
         this.loginEmitter.emit(false);
-        const domainUrl = window.location.origin;
-        let time: number;
-        time = 100;
-        // const url = domainUrl + '/Shibboleth.sso/Logout?return=' + domainUrl;
-        const url = domainUrl + '/saml/logout?ReturnTo=' + domainUrl;
-        setTimeout(() => {
-            window.location.href = url;
-        }, time);
+        this.accountService.logout();
+        this.routes.navigate(['/']);
     }
 
     hasPermission(hideifunauthorized: any) {
@@ -69,11 +65,6 @@ export class AuthService {
 
         }
     }
-
-    // getQueryStringValue(key) {
-    //     return decodeURIComponent(window.location.search.replace(new RegExp('^(?:.*[&\\?]' +
-    //         encodeURIComponent(key).replace(/[\.\+\*]/g, '\\$&') + '(?:\\=([^&]*))?)?.*$', 'i'), '$1'));
-    // }
 
     directLogin() {
         this.startLoader();

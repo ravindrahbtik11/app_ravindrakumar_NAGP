@@ -912,8 +912,9 @@ h3 {
 
 .view {
     overflow-y: auto;
-    height: 500px;
+    height: 400px;
     overflow-x: hidden;
+    margin-bottom: 40px;
 }
 
 button {
@@ -929,3 +930,12 @@ button {
 textarea {
     resize: none;
   }
+
+  .mat-toolbar-row, .mat-toolbar-single-row {
+    background-color: #284E5A !important;
+    color: white;
+}
+
+h1 {
+    font-size: 24px !important
+}

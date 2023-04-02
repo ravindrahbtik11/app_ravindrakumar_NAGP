@@ -16,7 +16,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import { MatCardModule } from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
@@ -33,6 +34,8 @@ const SHARED_MODULES: any[] = [
   MatCheckboxModule,
   MatRadioModule,
   MatDatepickerModule,
+  MatCardModule,
+  MatToolbarModule,
   FileUploadModule
 ];
 

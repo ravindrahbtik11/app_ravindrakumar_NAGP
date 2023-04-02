@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { LoginModel } from './login.model';
+import { AccountService } from './account.service';
+import { Account } from './account';
+import { AppSettings } from '../app.settings';
+import { ProductService } from '../product/product.service';
 
 
 @Component({
@@ -14,7 +18,12 @@ import { LoginModel } from './login.model';
 export class LoginComponent implements OnInit {
     model: any = {};
     loading: boolean;
-    constructor(private authService: AuthService, private routes: Router) {
+    account!: Account;
+    filterModel: any;
+    constructor(private authService: AuthService, private routes: Router,
+        private route: ActivatedRoute,
+        private productService: ProductService,
+        private accountService: AccountService) {
         this.model = new LoginModel();
     }
     ngOnInit() {
@@ -23,24 +32,41 @@ export class LoginComponent implements OnInit {
     }
     // Method use to login in application
     login() {
-        this.loading = true;
-        this.authService.startLoader();
-        this.authService.login(this.model.username, this.model.password);
-        // this.authService.login(this.model.username, this.model.password)
-        //     .subscribe(
-        //     data => {
-        //         this.authService.stopLoader();
-        //         this.loading = false;
-        //         if (data) {
-        //             this.routes.navigate(['/']);
-        //         } else {
-        //         }
+        // this.authService.login(this.model.username, this.model.password);
+        this.getProductDetail();
 
-        //     },
-        //     error => {
-        //         this.loading = false;
-        //         this.authService.stopLoader();
-        //     }
-        //     );
-     }
+    }
+
+    getProductDetail() {
+        let url = AppSettings.Product;
+        this.filterModel = {};
+        this.filterModel.Size = this.filterModel.Size ? this.filterModel.Size : '';
+        this.filterModel.brand = this.filterModel.brand ? this.filterModel.brand : '';
+        this.filterModel.Color = this.filterModel.Color ? this.filterModel.Color : '';
+        this.filterModel.filter = this.filterModel.filter ? this.filterModel.filter : '';
+        url = url + '?size=' + this.filterModel.Size + '&brand=' + this.filterModel.brand + '&color=' + this.filterModel.Color + '&name=' + this.filterModel.filter;
+        const token  = this.accountService.accountValue?.token ?  this.accountService.accountValue?.token : '';
+        this.authService.startLoader();
+        this.productService.getDetail(url + '&access_token=' + token).subscribe(response => {
+            this.authService.stopLoader();
+            if (response && response.length > 1 || (response.length === 1 && response[0])) {
+                this.productService.productList = response;
+                this.authService.loginEmitter.emit(true);
+            }
+        });
+    }
+
+    logoutWithFacebook() {
+        this.accountService.logout();
+    }
+
+    loginWithFacebook() {
+        this.accountService.login()
+            .subscribe(() => {
+                // get return url from query parameters or default to home page
+                // const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+                // this.routes.navigateByUrl(returnUrl);
+                this.authService.loginEmitter.emit(true);
+            });
+    }
 }

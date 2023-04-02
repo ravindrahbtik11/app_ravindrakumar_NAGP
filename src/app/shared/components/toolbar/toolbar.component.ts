@@ -33,9 +33,9 @@ export class ToolbarComponent implements OnDestroy {
       this.noOfCartItems = this.authService.selectedItems ? this.authService.selectedItems.length : 0;
     });
 
-    // if (this.authService.userInfo && this.authService.userInfo.isUserLoggedIn) {
-    //   this.isLoggedIn = this.authService.userInfo.isUserLoggedIn;
-    // }
+    if (this.authService.userInfo && this.authService.userInfo.isUserLoggedIn) {
+      this.isLoggedIn = this.authService.userInfo.isUserLoggedIn;
+    }
 
 
     this.getInnerWidt = (window.screen.width);
@@ -50,6 +50,12 @@ export class ToolbarComponent implements OnDestroy {
     };
     this.isuserdrpdwn = true;
 
+  }
+
+  logout() {
+    this.isLoggedIn = false;
+    this.authService.userInfo.isUserLoggedIn = false;
+    this.authService.logout();
   }
 
   // Method to handle destroy life cycle hooks

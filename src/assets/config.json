@@ -1,8 +1,9 @@
 {
 	"appConfig": {
-		"applicationName": "eCommerce",
+		"applicationName": "eCommerce 7085",
 		"baseUrl": "/",
-		"restApiPath": "http://localhost:7085/api/",
+		"apiUrl": "https://localhost:44397",
+		"restApiPath": "/api/",
 		"version": "1.0.0",
 		"toasterErrorTimeOut": 10000,
 		"toasterSuccessTimeOut": 3000

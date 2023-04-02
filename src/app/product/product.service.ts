@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ECAHttpService } from '../shared/services';
+import { AccountService } from '../login/account.service';
 
 
 @Injectable()
 
 export class ProductService {
 
-
-  url: string;
+  productFilter: any;
+  productList: any;
   constructor(private http: ECAHttpService) {
-    this.url = 'https://localhost:44392/api/product'
   }
 
 

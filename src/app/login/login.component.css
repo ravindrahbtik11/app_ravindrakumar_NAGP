@@ -8,8 +8,7 @@
 }
 .login-container{
      width: calc(66vw);
-     background: url(../../assets/images/background.jpg);
-     height: 567px;
+    height: 567px;
     position: absolute;
     top: 50%;
     left: 50%;

@@ -1,23 +1,83 @@
 <div>
     <h3 class="clearfix">
-        <div class="pageHeader pull-left">Product</div>
-        <div class="pull-right m-r-10"><button (click)="addProduct()">Add Product</button></div>
+        <!-- <div class="pageHeader pull-left">Product</div> -->
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <mat-form-field class="example-full-width">
+                    <input matInput id="txtFilter" placeholder="Search Product by name" name="filter"
+                        [(ngModel)]="filterModel.filter" #filter="ngModel" />
+                </mat-form-field>
+            </div>
+            <div class="col-md-2"><button class="btn btn-facebook" (click)="getProductDetail()">Search</button></div>
+            <!-- <button (click)="addProduct()">Add Product</button> -->
+        </div>
     </h3>
-    <div class="view">
-        <div class="row" *ngIf="productList?.length > 0">
-            <div class="col-md-3" *ngFor="let product of productList let i = index">
-                <div class="card">
-                    <div class="card-internal">
-                        <img src="../../assets/images/sample.png" alt="product.productName" style="width:100%;height: 120px;">
-                        <h1>{{product.productName}}</h1>
-                        <p>Brand: {{product.brand}}</p>
-                        <p class="price">MRP: ₹{{product.mrp}}</p>
-                        <p class="price">Selling Price: ₹{{product.sellingPrice}}</p>
-                        <p>{{product.description}}</p>
-                        <p><button type="button" (click)="addToCart(product)">Add to Cart</button></p>
+    <div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <mat-form-field>
+                            <mat-select id="ddlBrand" multiple placeholder="Select brand"
+                                [(ngModel)]="filterModel.brand" name="brand">
+                                <mat-option *ngFor="let item of brands" [value]="item.value">{{item.name}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
                     </div>
+                    <div class="col-md-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <mat-form-field>
+                            <mat-select id="ddlSize" multiple placeholder="Select Size" [(ngModel)]="filterModel.Size"
+                                name="size">
+                                <mat-option *ngFor="let item of sizes" [value]="item.value">{{item.name}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <mat-form-field>
+                            <mat-select id="ddlColor" multiple placeholder="Select Color"
+                                [(ngModel)]="filterModel.Color" name="color">
+                                <mat-option *ngFor="let item of colors" [value]="item.value">{{item.name}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+            <div class="col-md-10 view">
+                <div class="row" *ngIf="productList?.length > 0">
+                    <div class="col-md-3" *ngFor="let product of  (productList | filterChild :  filterModel.filter : false) let i = index">
+                        <div class="card">
+                            <div class="card-internal">
+                                <img src="{{'../../assets/images/'+ product.imagePath + '.png'}}" alt="product.name"
+                                    style="width:50%;height: 120px;">
+                                <h1>{{product.name}}</h1>
+                                <p>Brand: {{product.brand}}</p>
+                                <p class="price">Selling Price: ₹{{product.sellingPrice}}</p>
+                                <p>
+                                    <!-- <a [routerLink]="['/productdetail', product.id]">Show Detail </a> -->
+                                    <button  class="btn btn-facebook" type="button" (click)="getDetail(product.id)">Show Detail</button>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div  *ngIf="productList?.length === 0" class="noRecordFound">
+                    No record found.
                 </div>
             </div>
         </div>
+
     </div>
 </div>

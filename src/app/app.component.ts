@@ -30,11 +30,12 @@ export class AppComponent implements OnInit {
 
     this.subscription = this.authService.loginEmitter.subscribe((val: boolean) => {
       this.isLoggedIn = val;
+      this.authService.userInfo.isUserLoggedIn = val;
     });
 
-    if (this.authService.userInfo && this.authService.userInfo.isUserLoggedIn) {
-      this.isLoggedIn = this.authService.userInfo.isUserLoggedIn;
-    }
+    // if (this.authService.userInfo && this.authService.userInfo.isUserLoggedIn) {
+    //   this.isLoggedIn = this.authService.userInfo.isUserLoggedIn;
+    // }
   }
 
 

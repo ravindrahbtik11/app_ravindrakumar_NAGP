@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AddEditProductComponent } from './add-edit-product/add-edit-product.component';
 import { ProductComponent } from './product.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   imports: [
     RouterModule.forChild([
-      { path: 'product', component: ProductComponent },
-      { path: 'addproduct', component: AddEditProductComponent },
+      { path: '', component: ProductComponent },
+      { path: 'productdetail/:id', component: ProductDetailComponent },
       { path: 'editproduct', component: AddEditProductComponent },
     ])
   ],
