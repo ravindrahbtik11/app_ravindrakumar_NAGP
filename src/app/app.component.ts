@@ -4,6 +4,7 @@ import { AppSettings } from './app.settings';
 import { AuthService } from './auth.service';
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { ToastMessageComponent } from './shared/components/toaster/toast-message.component';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'eca-root',
@@ -52,13 +53,26 @@ export class AppComponent implements OnInit {
   }
 
   private loadConfigurations() {
-    this.authService.getConfigurations(AppSettings.ConfigDataPath).
-      subscribe(response => {
-        this.authService.stopLoader();
-        if (response && response.appConfig) {
-          AppSettings.setAppConfig(response);
-        }
-      });
+    if (environment.apiUrl) {
+      let appConfig = {
+        'baseUrl': environment.baseUrl,
+        'apiUrl': environment.apiUrl,
+        'restApiPath': environment.restApiPath,
+        'version': environment.version,
+        'toasterErrorTimeOut': environment.toasterErrorTimeOut,
+        'toasterSuccessTimeOut': environment.toasterSuccessTimeOut,
+      }
+      const response: any = {};
+      response.appConfig = appConfig;
+      AppSettings.setAppConfig(response);
+    }
+    // this.authService.getConfigurations(AppSettings.ConfigDataPath).
+    //   subscribe(response => {
+    //     this.authService.stopLoader();
+    //     if (response && response.appConfig) {
+    //       AppSettings.setAppConfig(response);
+    //     }
+    //   });
   }
 
 

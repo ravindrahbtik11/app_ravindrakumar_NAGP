@@ -53,13 +53,13 @@ pipeline{
 								}
 							  echo '****Image pushed****'					 
 						}	
-						//  echo '****Done Image building and pushing into docker hub****'	
-						//  echo '**creating deployment**' 
-						//  bat 'kubectl apply -f .\\deployment.yml'
-						//  echo '****deployment created****' 
-						//  echo '**creating horizontal pod autoscaler**' 
-						//  bat 'kubectl apply -f .\\horizontalpodautoscaler.yml'
-						//  echo '****horizontal pod autoscaler created****' 					
+						 echo '****Done Image building and pushing into docker hub****'	
+						 echo '**creating deployment**' 
+						 bat 'kubectl apply -f .\\deployment.yml'
+						 echo '****deployment created****' 
+						 echo '**creating horizontal pod autoscaler**' 
+						 bat 'kubectl apply -f .\\horizontalpodautoscaler.yml'
+						 echo '****horizontal pod autoscaler created****' 					
 						
                 }
          }

@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
         this.model = new LoginModel();
     }
     ngOnInit() {
-        this.authService.stopLoader();
         this.loading = false;
     }
     // Method use to login in application

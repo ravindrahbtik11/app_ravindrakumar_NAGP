@@ -59,7 +59,7 @@
                     <div class="col-md-3" *ngFor="let product of  (productList | filterChild :  filterModel.filter : false) let i = index">
                         <div class="card">
                             <div class="card-internal">
-                                <img src="{{'../../assets/images/'+ product.imagePath + '.png'}}" alt="product.name"
+                                <img src="{{'../../assets/images/'+ product.imagePath + '.png'}}" alt="{{product.name}}"
                                     style="width:50%;height: 120px;">
                                 <h1>{{product.name}}</h1>
                                 <p>Brand: {{product.brand}}</p>

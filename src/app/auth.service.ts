@@ -40,7 +40,7 @@ export class AuthService {
 
     // Method use to logout from application
     public logout() {
-        this.startLoader();
+        this.stopLoader();
         sessionStorage.clear();
         this.userInfo = new LoginModel();
         localStorage.clear();
