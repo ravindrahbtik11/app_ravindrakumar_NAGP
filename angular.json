@@ -105,5 +105,8 @@
       }
     }
   },
-  "defaultProject": "eCommerce-Web"
+  "defaultProject": "eCommerce-Web",
+  "cli": {
+    "analytics": false
+  }
 }

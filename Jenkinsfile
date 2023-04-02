@@ -43,16 +43,16 @@ pipeline{
          stage('Code build and Creation of Docker Image'){
             steps {
 					echo '**Image building section**'
-					//  script{
-					// 	  echo '**Start building Docker image**'
-					// 		  dockerImage = docker.build("ravindrahbtik11/i-ravindrakumar-main:latest")
-					// 		  echo '****Image built****'
-					// 		  echo '**Start pushing Docker image**'
-					// 		  docker.withRegistry( '', 'DockerDetail' ) {
-					// 				 dockerImage.push('latest')
-					// 			}
-					// 		  echo '****Image pushed****'					 
-					// 	}	
+					 script{
+						  echo '**Start building Docker image**'
+							  dockerImage = docker.build("ravindrahbtik11/i-ravindrakumar-main:latest")
+							  echo '****Image built****'
+							  echo '**Start pushing Docker image**'
+							  docker.withRegistry( '', 'DockerDetail' ) {
+									 dockerImage.push('latest')
+								}
+							  echo '****Image pushed****'					 
+						}	
 						//  echo '****Done Image building and pushing into docker hub****'	
 						//  echo '**creating deployment**' 
 						//  bat 'kubectl apply -f .\\deployment.yml'
