@@ -11,6 +11,7 @@ namespace eCommerce.ProductService.DAC.Entity
             this.Size = string.Empty;
             this.Brand = string.Empty;
             this.Color = string.Empty;
+            this.ImagePath = string.Empty;
         }
 
         [Key]
@@ -31,6 +32,8 @@ namespace eCommerce.ProductService.DAC.Entity
         public string Size { get; set; }
 
         public string Color { get; set; }
+
+        public string ImagePath { get; set; }
     }
 
     public class ProductDTO
@@ -38,6 +41,10 @@ namespace eCommerce.ProductService.DAC.Entity
         public ProductDTO()
         {
             this.Name = string.Empty;
+            this.Size = string.Empty;
+            this.Brand = string.Empty;
+            this.Color = string.Empty;
+            this.ImagePath = string.Empty;
         }
 
         public int Id { get; set; }
@@ -53,9 +60,10 @@ namespace eCommerce.ProductService.DAC.Entity
         public decimal SellingPrice { get; set; }
         public int Quantity { get; set; }
 
-        public string? Size { get; set; }
+        public string Size { get; set; }
 
-        public string? Color { get; set; }
+        public string Color { get; set; }
+        public string ImagePath { get; set; }
 
         public byte[] FormData { get; set; }
     }

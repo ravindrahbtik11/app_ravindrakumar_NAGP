@@ -11,7 +11,7 @@ using eCommerce.ProductService.DAC.Contexts;
 namespace eCommerce.ProductService.Migrations
 {
     [DbContext(typeof(ProductContext))]
-    [Migration("20230401121349_Initial")]
+    [Migration("20230401160400_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -23,6 +23,28 @@ namespace eCommerce.ProductService.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("eCommerce.ProductService.Account", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ExtraInfo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("FacebookId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Accounts");
+                });
 
             modelBuilder.Entity("eCommerce.ProductService.DAC.Entity.Product", b =>
                 {
@@ -44,6 +66,10 @@ namespace eCommerce.ProductService.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImagePath")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("MRP")

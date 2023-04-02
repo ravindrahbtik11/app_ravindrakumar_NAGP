@@ -1,3 +1,4 @@
+using eCommerce.ProductService;
 using eCommerce.ProductService.DAC.Contexts;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,8 +14,18 @@ builder.Services.AddDbContext<ProductContext>(options =>
 
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     options.UseSqlServer(connectionString, options => options.EnableRetryOnFailure());
+   
     //options.UseInMemoryDatabase(databaseName: "ProductDb");
 });
+
+
+
+//public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DataContext dataContext)
+//{
+//    // migrate any database changes on startup (includes initial db creation)
+//    dataContext.Database.Migrate();
+
+//}
 
 
 //builder.Services.AddCors(options =>
@@ -34,8 +45,19 @@ builder.Services.AddHttpContextAccessor();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+
+// configure DI for application services
+builder.Services.AddScoped<IJwtUtils, JwtUtils>();
+builder.Services.AddScoped<IAccountService, AccountService>();
 
 var app = builder.Build();
+
+//using (var scope = app.Services.CreateScope())
+//{
+//    var db = scope.ServiceProvider.GetRequiredService<ProductContext>();
+//    db.Database.Migrate();
+//}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -54,5 +76,12 @@ app.UseCors(builder => builder
 .SetIsOriginAllowed((host) => true)
 .AllowCredentials());
 app.MapControllers();
+
+
+// global error handler
+app.UseMiddleware<ErrorHandlerMiddleware>();
+
+// custom jwt auth middleware
+app.UseMiddleware<JwtMiddleware>();
 
 app.Run();

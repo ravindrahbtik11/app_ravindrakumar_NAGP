@@ -11,6 +11,8 @@ namespace eCommerce.ProductService.DAC.Contexts
       //      optionsBuilder.UseInMemoryDatabase(databaseName: "ProductDb");
       //  }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Account> Accounts { get; set; }
+
         public ProductContext(DbContextOptions<ProductContext> options)
             : base(options)
         {
