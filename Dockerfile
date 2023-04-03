@@ -3,7 +3,9 @@
 
 # Use Microsoft's official build .NET image.
 # https://hub.docker.com/_/microsoft-dotnet-core-sdk/
-FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine3.14 AS build
+ENV DOTNET_RUNNING_IN_CONTAINER=true
+ASPNETCORE_URLS=http://+:8080
 WORKDIR /app
 
 EXPOSE 8080
@@ -17,7 +19,7 @@ RUN dotnet restore
 # Copy local code to the container image.
 COPY "./eCommerce.ProductService/"  ./
 WORKDIR /app
-
+RUN apk add --no-cache icu-libs krb5-libs libgcc libintl libssl1.1 libstdc++ zlib
 # Build a release artifact.
 RUN dotnet publish -c Release -o out
 
@@ -26,7 +28,8 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine-amd64 AS runtime
 WORKDIR /app
 COPY --from=build /app/out ./
-# Make sure the app binds to port 8080
-ENV  ASPNETCORE_URLS=http://+:8080
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
+## Make sure the app binds to port 8080
+#ENV  ASPNETCORE_URLS=http://+:8080
 # Run the web service on container startup.
 ENTRYPOINT ["dotnet", "eCommerce.ProductService.dll"]
