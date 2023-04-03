@@ -36,7 +36,7 @@ metadata:
   namespace: kubernetes-cluster-ravindrakumar
 spec:
   ports:
-  - nodePort: 31310
+  - nodePort: 31410
     port: 80
     protocol: TCP
     targetPort: 80
