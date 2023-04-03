@@ -3,15 +3,15 @@
 
 # Use Microsoft's official build .NET image.
 # https://hub.docker.com/_/microsoft-dotnet-core-sdk/
-FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine3.14 AS build
-
+FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build
+RUN apk add --no-cache icu-libs
 WORKDIR /app
 
 EXPOSE 8080
 EXPOSE 443
 ENV ASPNETCORE_URLS=http://+:8080
 
-RUN apk add --no-cache icu-libs krb5-libs libgcc libintl libssl1.1 libstdc++ zlib
+
 # Install production dependencies.
 # Copy csproj and restore as distinct layers.
 COPY "eCommerce.ProductService/*.csproj" "./"
