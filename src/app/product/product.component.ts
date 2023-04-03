@@ -30,6 +30,7 @@ export class ProductComponent implements OnInit {
         this.filterModel = new ProductFilterModel();
         this.selectedProduct = [];
         this.productList = [];
+        
         // this.accountService.getAccount()
         //     .subscribe(x => {
         //         this.account = x

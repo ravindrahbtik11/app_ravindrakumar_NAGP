@@ -45,8 +45,8 @@ export class LoginComponent implements OnInit {
         this.filterModel.filter = this.filterModel.filter ? this.filterModel.filter : '';
         url = url + '?size=' + this.filterModel.Size + '&brand=' + this.filterModel.brand + '&color=' + this.filterModel.Color + '&name=' + this.filterModel.filter;
         const token  = this.accountService.accountValue?.token ?  this.accountService.accountValue?.token : '';
-        this.authService.startLoader();
-        this.productService.getDetail(url + '&access_token=' + token).subscribe(response => {
+        this.authService.startLoader(); // + '&access_token=' + token
+        this.productService.getDetail(url).subscribe(response => {
             this.authService.stopLoader();
             if (response && response.length > 1 || (response.length === 1 && response[0])) {
                 this.productService.productList = response;
