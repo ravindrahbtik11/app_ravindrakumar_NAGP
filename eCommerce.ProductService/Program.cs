@@ -12,10 +12,10 @@ builder.Services.AddDbContext<ProductContext>(options =>
     //        @"Server=(localdb)\mssqllocaldb;Database=EFMiscellanous.ConnectionResiliency;Trusted_Connection=True;ConnectRetryCount=0",
     //        options => options.EnableRetryOnFailure());
 
-    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-    options.UseSqlServer(connectionString, options => options.EnableRetryOnFailure());
+    // var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    // options.UseSqlServer(connectionString, options => options.EnableRetryOnFailure());
    
-    //options.UseInMemoryDatabase(databaseName: "ProductDb");
+    options.UseInMemoryDatabase(databaseName: "ProductDb");
 });
 
 
