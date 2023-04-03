@@ -7,7 +7,8 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build
 
 WORKDIR /app
 RUN apk add --no-cache icu-libs
- LC_ALL=en_US.UTF-8 \
+RUN apk add --no-cache icu-data-full
+ENV LC_ALL=en_US.UTF-8 \
     LANG=en_US.UTF-8
 EXPOSE 8080
 EXPOSE 443
