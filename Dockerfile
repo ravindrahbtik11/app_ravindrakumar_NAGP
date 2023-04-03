@@ -7,13 +7,11 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build
 
 WORKDIR /app
 RUN apk add --no-cache icu-libs
-ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false \
  LC_ALL=en_US.UTF-8 \
     LANG=en_US.UTF-8
 EXPOSE 8080
 EXPOSE 443
 
-ENV ASPNETCORE_URLS=http://+:8080
 
 # Install production dependencies.
 # Copy csproj and restore as distinct layers.
@@ -33,6 +31,6 @@ WORKDIR /app
 COPY --from=build /app/out ./
    
 ## Make sure the app binds to port 8080
-#ENV  ASPNETCORE_URLS=http://+:8080
+ENV  ASPNETCORE_URLS=http://+:8080
 # Run the web service on container startup.
 ENTRYPOINT ["dotnet", "eCommerce.ProductService.dll"]
