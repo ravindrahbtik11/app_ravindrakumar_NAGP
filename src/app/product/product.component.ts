@@ -30,10 +30,10 @@ export class ProductComponent implements OnInit {
         this.filterModel = new ProductFilterModel();
         this.selectedProduct = [];
         this.productList = [];
-        this.accountService.getAccount()
-            .subscribe(x => {
-                this.account = x
-            });
+        // this.accountService.getAccount()
+        //     .subscribe(x => {
+        //         this.account = x
+        //     });
 
         if (this.productService.productFilter) {
             this.filterModel = this.productService.productFilter;
