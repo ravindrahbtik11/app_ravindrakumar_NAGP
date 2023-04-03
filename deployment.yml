@@ -18,34 +18,11 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 80
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
       app: nagp-web-main
       type: web-main
-        
-        
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: nagp-web-main
-  name: nagp-web-main
-  namespace: kubernetes-cluster-ravindrakumar
-spec:
-  ports:
-  - nodePort: 31430
-    port: 80
-    protocol: TCP
-    targetPort: 80
-  sessionAffinity: None
-  selector:
-    app: nagp-web-main
-    type: web-main
-  type: LoadBalancer
-
       
       
       

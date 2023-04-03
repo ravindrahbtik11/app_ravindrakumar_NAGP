@@ -57,9 +57,9 @@ pipeline{
 						 echo '**creating deployment**' 
 						 bat 'kubectl apply -f .\\deployment.yml'
 						 echo '****deployment created****' 
-						//  echo '**creating horizontal pod autoscaler**' 
-						//  bat 'kubectl apply -f .\\horizontalpodautoscaler.yml'
-						//  echo '****horizontal pod autoscaler created****' 					
+						 echo '**creating service**' 
+						 bat 'kubectl apply -f .\\service.yml'
+						 echo '****service created****' 					
 						
                 }
          }
