@@ -3,13 +3,11 @@
 
 # Use Microsoft's official build .NET image.
 # https://hub.docker.com/_/microsoft-dotnet-core-sdk/
-FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine3.16 AS build
  
 WORKDIR /app
 RUN apk add --no-cache icu-libs
 RUN apk add --no-cache icu-data-full
-ENV LC_ALL=en_US.UTF-8 \
-    LANG=en_US.UTF-8
 EXPOSE 8080
 EXPOSE 443
 
@@ -27,7 +25,7 @@ RUN dotnet publish -c Release -o out
 
 # Use Microsoft's official runtime .NET image.
 # https://hub.docker.com/_/microsoft-dotnet-core-aspnet/
-FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine-amd64 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine3.16-amd64 AS runtime
 WORKDIR /app
 COPY --from=build /app/out ./
    
