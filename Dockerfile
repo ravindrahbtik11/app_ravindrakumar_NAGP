@@ -10,8 +10,6 @@ EXPOSE 8080
 EXPOSE 443
 
 ENV DOTNET_RUNNING_IN_CONTAINER=true
-
-
 # Install production dependencies.
 # Copy csproj and restore as distinct layers.
 COPY "eCommerce.ProductService/*.csproj" "./"
@@ -32,6 +30,5 @@ COPY --from=build /app/out ./
 # Make sure the app binds to port 8080
 ASPNETCORE_URLS=http://+:8080
 ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
-
 # Run the web service on container startup.
 ENTRYPOINT ["dotnet", "eCommerce.ProductService.dll"]
