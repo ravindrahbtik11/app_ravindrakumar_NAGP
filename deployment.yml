@@ -15,7 +15,7 @@ spec:
       containers:
       - name: nagp-web-main
         image: ravindrahbtik11/i-ravindrakumar-web-main:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
   replicas: 4
@@ -36,7 +36,7 @@ metadata:
   namespace: kubernetes-cluster-ravindrakumar
 spec:
   ports:
-  - nodePort: 31210
+  - nodePort: 31430
     port: 80
     protocol: TCP
     targetPort: 80
