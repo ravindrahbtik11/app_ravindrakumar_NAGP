@@ -5,6 +5,7 @@
 # https://hub.docker.com/_/microsoft-dotnet-core-sdk/
 FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build
 WORKDIR /app
+RUN apk add --no-cache icu-data-full
 ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=0
 EXPOSE 8080
 EXPOSE 443
@@ -28,7 +29,7 @@ WORKDIR /app
 COPY --from=build /app/out ./
 
 # Make sure the app binds to port 8080
-ENV ASPNETCORE_URLS http://*:8080
+ENV ASPNETCORE_URLS http://*:8080, https://*:8085
 
 # Run the web service on container startup.
 ENTRYPOINT ["dotnet", "eCommerce.ProductService.dll"]
