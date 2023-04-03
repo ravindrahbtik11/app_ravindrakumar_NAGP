@@ -15,9 +15,10 @@ spec:
       containers:
       - name: nagp-product-dev
         image: ravindrahbtik11/i-ravindrakumar-product-service:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
+        - containerPort: 443
   replicas: 2
   selector:
     matchLabels:
@@ -36,7 +37,7 @@ metadata:
   namespace: kubernetes-cluster-ravindrakumar
 spec:
   ports:
-  - nodePort: 31110
+  - nodePort: 31450
     port: 8080
     protocol: TCP
     targetPort: 8080
