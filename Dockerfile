@@ -3,7 +3,7 @@
 
 # Use Microsoft's official build .NET image.
 # https://hub.docker.com/_/microsoft-dotnet-core-sdk/
-FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine3.16 AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0-alpine AS build
  
 WORKDIR /app
 EXPOSE 8080
@@ -23,7 +23,7 @@ RUN dotnet publish -c Release -o out
 
 # Use Microsoft's official runtime .NET image.
 # https://hub.docker.com/_/microsoft-dotnet-core-aspnet/
-FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine-amd64 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:7.0-alpine-amd64 AS runtime
 WORKDIR /app
 COPY --from=build /app/out ./
    
