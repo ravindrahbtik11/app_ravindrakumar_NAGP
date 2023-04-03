@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nagp-product-dev
-  namespace: kubernetes-cluster-ravindrakumar
   labels:
     app: nagp-product-dev
 spec:
@@ -34,10 +33,9 @@ metadata:
   labels:
     app: nagp-product-dev
   name: nagp-product-dev
-  namespace: kubernetes-cluster-ravindrakumar
 spec:
   ports:
-  - nodePort: 31450
+  - nodePort: 31350
     port: 8080
     protocol: TCP
     targetPort: 8080
