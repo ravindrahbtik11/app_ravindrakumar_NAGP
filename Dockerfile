@@ -4,7 +4,7 @@
 # Use Microsoft's official build .NET image.
 # https://hub.docker.com/_/microsoft-dotnet-core-sdk/
 FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build
-
+ 
 WORKDIR /app
 RUN apk add --no-cache icu-libs
 RUN apk add --no-cache icu-data-full
