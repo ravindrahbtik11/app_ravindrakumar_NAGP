@@ -45,7 +45,7 @@ pipeline{
 					echo '**Image building section**'
 					 script{
 						  echo '**Start building Docker image**'
-							  dockerImage = docker.build("ravindrahbtik11/i-ravindrakumar-web-main:latest")
+							  dockerImage = docker.build("ravindrahbtik11/i-ravindrakumar-web-main:${BUILD_NUMBER}")
 							  echo '****Image built****'
 							  echo '**Start pushing Docker image**'
 							  docker.withRegistry( '', 'DockerDetail' ) {
