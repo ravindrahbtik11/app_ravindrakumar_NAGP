@@ -28,7 +28,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine-amd64 AS runtime
 WORKDIR /app
 COPY --from=build /app/out ./
 # Make sure the app binds to port 8080
-ASPNETCORE_URLS=http://+:8080
+ENV ASPNETCORE_URLS=http://+:8080
 ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
 # Run the web service on container startup.
 ENTRYPOINT ["dotnet", "eCommerce.ProductService.dll"]
