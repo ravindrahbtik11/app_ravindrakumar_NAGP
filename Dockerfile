@@ -6,8 +6,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine3.16 AS build
  
 WORKDIR /app
-RUN apk add --no-cache icu-libs
-RUN apk add --no-cache icu-data-full
 EXPOSE 8080
 EXPOSE 443
 
