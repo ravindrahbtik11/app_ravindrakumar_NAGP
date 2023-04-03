@@ -45,7 +45,7 @@ pipeline{
 					echo '**Image building section**'
 					 script{
 						  echo '**Start building Docker image**'
-							  dockerImage = docker.build("ravindrahbtik11/i-ravindrakumar-main:latest")
+							  dockerImage = docker.build("ravindrahbtik11/i-ravindrakumar-web-main:latest")
 							  echo '****Image built****'
 							  echo '**Start pushing Docker image**'
 							  docker.withRegistry( '', 'DockerDetail' ) {
@@ -57,9 +57,9 @@ pipeline{
 						 echo '**creating deployment**' 
 						 bat 'kubectl apply -f .\\deployment.yml'
 						 echo '****deployment created****' 
-						 echo '**creating horizontal pod autoscaler**' 
-						 bat 'kubectl apply -f .\\horizontalpodautoscaler.yml'
-						 echo '****horizontal pod autoscaler created****' 					
+						//  echo '**creating horizontal pod autoscaler**' 
+						//  bat 'kubectl apply -f .\\horizontalpodautoscaler.yml'
+						//  echo '****horizontal pod autoscaler created****' 					
 						
                 }
          }
