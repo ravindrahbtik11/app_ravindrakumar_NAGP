@@ -9,6 +9,11 @@ WORKDIR /app
 EXPOSE 8080
 EXPOSE 443
 
+
+# Make sure the app binds to port 8080
+ENV DOTNET_RUNNING_IN_CONTAINER=true
+ASPNETCORE_URLS=http://+:8080
+
 # Install production dependencies.
 # Copy csproj and restore as distinct layers.
 COPY "eCommerce.ProductService/*.csproj" "./"
@@ -26,9 +31,7 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine-amd64 AS runtime
 WORKDIR /app
 COPY --from=build /app/out ./
-ENV DOTNET_RUNNING_IN_CONTAINER=true
-# Make sure the app binds to port 8080
-ENV ASPNETCORE_URLS http://*:8080
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
 
 # Run the web service on container startup.
 ENTRYPOINT ["dotnet", "eCommerce.ProductService.dll"]
