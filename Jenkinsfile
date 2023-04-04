@@ -66,11 +66,11 @@ pipeline{
 					echo '**Image building section**'
 					 script{
 						  echo '**Start building Docker image**'
-							  dockerImage = docker.build("ravindrahbtik11/i-ravindrakumar-product-service:${BUILD_NUMBER}")
+							  dockerImage = docker.build("ravindrahbtik11/i-ravindrakumar-product-service:latest")
 							  echo '****Image built****'
 							  echo '**Start pushing Docker image**'
 							  docker.withRegistry( '', 'DockerDetail' ) {
-									 dockerImage.push()
+									 dockerImage.push('latest')
 								}
 							  echo '****Image pushed****'					 
 						}	
