@@ -80,7 +80,8 @@ namespace eCommerce.ProductService.Controllers
         [HttpGet("{id}")]
         public Product Get(int id)
         {
-            var product = _dbContext.Products.FirstOrDefault(s => s.Id == id);
+            List<Product> products = GetProducts();
+            var product = products.FirstOrDefault(s => s.Id == id); //_dbContext.Products.FirstOrDefault(s => s.Id == id);
             return product;
         }
 
