@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nagp-product-dev
-        image: ravindrahbtik11/i-ravindrakumar-product-services:latest
+        image: ravindrahbtik11/i-ravindrakumar-product-service:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -24,8 +24,6 @@ spec:
     matchLabels:
       app: nagp-product-dev
       type: product
-  strategy:
-    type: Recreate
         
         
 ---
