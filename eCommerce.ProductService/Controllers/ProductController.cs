@@ -81,7 +81,8 @@ namespace eCommerce.ProductService.Controllers
         public Product Get(int id)
         {
             List<Product> products = GetProducts();
-            var product = products.FirstOrDefault(s => s.Id == id); //_dbContext.Products.FirstOrDefault(s => s.Id == id);
+            var product = products.FirstOrDefault(s => s.Id == id);
+            //_dbContext.Products.FirstOrDefault(s => s.Id == id);
             return product;
         }
 
@@ -153,7 +154,7 @@ namespace eCommerce.ProductService.Controllers
                                                new Product() {Id = 9, Name = "Jeans", Description = "This will fit you best based on data from customers who buy the same sizes as you.",
                                             CategoryId= 4,MRP=1800,Brand = "Adidas",SellingPrice=1500,Quantity=10 ,Size ="Large",Color ="Blue",ImagePath="jeans"},
                                              new Product() {Id = 10, Name = "Jhumka", Description = "This will fit you best based on data from customers.",
-                                            CategoryId= 14,MRP=1200,Brand = "Common",SellingPrice=1000,Quantity=10 ,Size ="Large",Color ="Golden",ImagePath="jhumka-img"},
+                                            CategoryId= 24,MRP=1200,Brand = "Common",SellingPrice=1000,Quantity=10 ,Size ="Large",Color ="Golden",ImagePath="jhumka-img"},
                                               new Product() {Id = 11, Name = "Gold Neklesh", Description = "This is the Large size gold neck lesh.",
                                             CategoryId= 10,MRP=25000,Brand = "Spykar",SellingPrice=20000,Quantity=10 ,Size ="Large",Color ="Golden",ImagePath="neklesh-img"},
                                                new Product() {Id = 13, Name = "Laptop", Description = "This is high performance laptop.",
