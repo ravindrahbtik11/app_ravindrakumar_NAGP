@@ -48,9 +48,9 @@ export class LoginComponent implements OnInit {
         this.authService.startLoader(); // + '&access_token=' + token
         this.productService.getDetail(url).subscribe(response => {
             this.authService.stopLoader();
+            this.authService.loginEmitter.emit(true);
             if (response && response.length > 1 || (response.length === 1 && response[0])) {
                 this.productService.productList = response;
-                this.authService.loginEmitter.emit(true);
             }
         });
     }

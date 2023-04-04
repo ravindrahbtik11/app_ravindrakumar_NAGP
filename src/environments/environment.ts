@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://20.165.12.150:8080',
+  apiUrl: 'http://20.225.38.208:8080',
   facebookAppId: '314930319788683',
   baseUrl:'/',
   version:'1.0.0',
