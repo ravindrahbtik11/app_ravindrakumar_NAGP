@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -64,7 +65,8 @@ namespace eCommerce.ProductService.Controllers
             }
 
             List<Product> products = new List<Product>();
-            products = _dbContext.Products.DefaultIfEmpty().ToList();
+            //products = _dbContext.Products.DefaultIfEmpty().ToList();
+            products = GetProducts();
             if (products.Count > 0 && products[0] != null)
             {
                 products = products.Where(p => (p.Name.Contains(name) || name == string.Empty) && (size == string.Empty || sizes.Any(s => s.Contains(p.Size))) &&
@@ -129,49 +131,35 @@ namespace eCommerce.ProductService.Controllers
             return Ok("File Uploaded Successfully");
         }
 
-        //public string UploadFilesToBlob()
-        //{
-        //    try
-        //    {
-        //        HttpContext context = this.Accessor.HttpContext;
-        //        string storageConnectionString = "";
-        //        CloudStorageAccount blobStorage = CloudStorageAccount.Parse(storageConnectionString);
-        //        CloudBlobClient blobClient = blobStorage.CreateCloudBlobClient();
-        //        if (Request.HttpContext.Request.Form["BlobContainerName"] != null)
-        //        {
-        //            string blobContainerName = Request.HttpContext.Request.Form["BlobContainerName"].ToString();
-        //            CloudBlobContainer container = blobClient.GetContainerReference(blobContainerName);
-        //            container.CreateIfNotExistsAsync();
+       private List<Product> GetProducts()
+        {
+            var products = new List<Product>(){ new Product() {Name = "Jeans", Description = "This will fit you best based on data from customers who buy the same sizes as you.",
+                                            CategoryId= 4,MRP=1800,Brand = "Adidas",SellingPrice=1500,Quantity=10 ,Size ="Medium",Color ="Blue",ImagePath="jeans"},
+                                             new Product() {Name = "Jhumka", Description = "This will fit you best based on data from customers.",
+                                            CategoryId= 14,MRP=1200,Brand = "Common",SellingPrice=1000,Quantity=10 ,Size ="Medium",Color ="Golden",ImagePath="jhumka-img"},
+                                              new Product() {Name = "Gold Neklesh", Description = "This is the Medium size gold neck lesh.",
+                                            CategoryId= 10,MRP=25000,Brand = "Spykar",SellingPrice=20000,Quantity=10 ,Size ="Medium",Color ="Golden",ImagePath="neklesh-img"},
+                                               new Product() {Name = "Laptop", Description = "This is high performance laptop.",
+                                            CategoryId= 14,MRP=50000,Brand = "Dell",SellingPrice=45000,Quantity=30 ,Size ="Small",Color ="Black",ImagePath="laptop-img"},
+                                               new Product() {Name = "Jeans", Description = "This will fit you best based on data from customers who buy the same sizes as you.",
+                                            CategoryId= 4,MRP=1800,Brand = "Adidas",SellingPrice=1500,Quantity=10 ,Size ="Small",Color ="Blue",ImagePath="jeans"},
+                                             new Product() {Name = "Jhumka", Description = "This will fit you best based on data from customers.",
+                                            CategoryId= 14,MRP=1200,Brand = "Common",SellingPrice=1000,Quantity=10 ,Size ="Small",Color ="Golden",ImagePath="jhumka-img"},
+                                              new Product() {Name = "Gold Neklesh", Description = "This is the Small size gold neck lesh.",
+                                            CategoryId= 10,MRP=25000,Brand = "Spykar",SellingPrice=20000,Quantity=10 ,Size ="Small",Color ="Golden",ImagePath="neklesh-img"},
+                                               new Product() {Name = "Laptop", Description = "This is high performance laptop.",
+                                            CategoryId= 14,MRP=50000,Brand = "Dell",SellingPrice=45000,Quantity=30 ,Size ="Medium",Color ="Black",ImagePath="laptop-img"},
+                                               new Product() {Name = "Jeans", Description = "This will fit you best based on data from customers who buy the same sizes as you.",
+                                            CategoryId= 4,MRP=1800,Brand = "Adidas",SellingPrice=1500,Quantity=10 ,Size ="Large",Color ="Blue",ImagePath="jeans"},
+                                             new Product() {Name = "Jhumka", Description = "This will fit you best based on data from customers.",
+                                            CategoryId= 14,MRP=1200,Brand = "Common",SellingPrice=1000,Quantity=10 ,Size ="Large",Color ="Golden",ImagePath="jhumka-img"},
+                                              new Product() {Name = "Gold Neklesh", Description = "This is the Large size gold neck lesh.",
+                                            CategoryId= 10,MRP=25000,Brand = "Spykar",SellingPrice=20000,Quantity=10 ,Size ="Large",Color ="Golden",ImagePath="neklesh-img"},
+                                               new Product() {Name = "Laptop", Description = "This is high performance laptop.",
+                                            CategoryId= 14,MRP=50000,Brand = "Dell",SellingPrice=45000,Quantity=30 ,Size ="Large",Color ="Black",ImagePath="laptop-img"},
 
-        //            // Set public access level to the container.
-        //            container.SetPermissionsAsync(new BlobContainerPermissions()
-        //            {
-        //                PublicAccess = BlobContainerPublicAccessType.Container
-        //            });
-
-        //            string folderName = "";
-        //            if (Request.HttpContext.Request.Form["FolderNameToUploadFiles"] != null)
-        //                folderName = Request.HttpContext.Request.Form["FolderNameToUploadFiles"].ToString() + "/";
-
-        //            for (int i = 0; i < Request.HttpContext.Request.Files.Count; i++)
-        //            {
-        //                var httpPostedFile = Request.HttpContext.Request.Files[i];
-        //                if (httpPostedFile != null)
-        //                {
-        //                    string blobName = folderName + httpPostedFile.FileName;
-        //                    CloudBlockBlob blob = container.GetBlockBlobReference(blobName);
-        //                    blob.UploadFromStreamAsync(httpPostedFile.InputStream);
-        //                }
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-
-        //    return "# of file(s) sent to upload: " + HttpContext.Current.Request.Files.Count.ToString();
-
-        //}
+                        };
+            return products;
+        }
     }
 }
