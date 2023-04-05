@@ -65,8 +65,8 @@ namespace eCommerce.ProductService.Controllers
             }
 
             List<Product> products = new List<Product>();
-            //products = _dbContext.Products.DefaultIfEmpty().ToList();
-            products = GetProducts();
+            products = _dbContext.Products.DefaultIfEmpty().ToList();
+            //products = GetProducts();
             if (products.Count > 0 && products[0] != null)
             {
                 products = products.Where(p => (p.Name.Contains(name) || name == string.Empty) && (size == string.Empty || sizes.Any(s => s.Contains(p.Size))) &&
@@ -80,9 +80,9 @@ namespace eCommerce.ProductService.Controllers
         [HttpGet("{id}")]
         public Product Get(int id)
         {
-            List<Product> products = GetProducts();
-            var product = products.FirstOrDefault(s => s.Id == id);
-            //_dbContext.Products.FirstOrDefault(s => s.Id == id);
+            //List<Product> products = GetProducts();
+            //var product = products.FirstOrDefault(s => s.Id == id);
+            var product =  _dbContext.Products.FirstOrDefault(s => s.Id == id);
             return product;
         }
 
