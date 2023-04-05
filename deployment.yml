@@ -37,10 +37,14 @@ metadata:
   namespace: kubernetes-cluster-ravindrakumar
 spec:
   ports:
-  - nodePort: 31550
-    port: 8080
-    protocol: TCP
-    targetPort: 8080
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: 31550
+    - name: https
+      protocol: TCP
+      port: 443
+      targetPort: 33770
   sessionAffinity: None
   selector:
     app: nagp-product-dev
