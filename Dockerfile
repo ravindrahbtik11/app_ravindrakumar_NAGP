@@ -28,7 +28,7 @@ WORKDIR /app
 COPY --from=build /app/out ./
 
 # Make sure the app binds to port 8080
-ENV ASPNETCORE_URLS https://*:8085
+ENV ASPNETCORE_URLS http://*:8085
 
 # Run the web service on container startup.
 ENTRYPOINT ["dotnet", "eCommerce.ProductService.dll"]
